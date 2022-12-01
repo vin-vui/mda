@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Additional styles
+@import 'custom/utilities.scss';
+@import 'custom/hamburger.scss';
+
+// See Alpine.js: https://alpinejs.dev/directives/cloak
+[x-cloak] { display: none !important; }
