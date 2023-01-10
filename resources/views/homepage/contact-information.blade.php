@@ -1,22 +1,24 @@
-<section class='relative w-full px-4 pt-56 bg-white sm:pt-64 lg:pt-72 sm:px-6 lg:px-8'>
+<section id="informations" class='relative w-full px-4 pt-0 bg-white sm:pt-64 lg:pt-72 sm:px-6 lg:px-8'>
 
     <div class='max-w-xl mx-auto lg:max-w-screen-2xl'>
 
         <div class='lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-32'>
             <div class='flex items-center'>
-                <h2 class='max-w-3xl mt-6 text-purple-900 h2'>
+                <h2 class='max-w-3xl text-purple-900 h2'>
                     <span class="relative block">
                         Informations
                         <span class='relative'>
-                            <img class='absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14' src='images/underline-simple-light-purple.svg'>
+                            <img class='absolute inset-0 transform translate-y-8 sm:translate-y-11 xl:translate-y-12' src='images/underline-simple-light-purple.svg'>
                             <span class='relative'>Pratiques</span>
                         </span>
                     </span>
                 </h2>
             </div>
-            <div class='flex items-center mt-3 sm:mt-4 lg:mt-0'>
+            <div class='mt-3 sm:mt-4 lg:mt-0'>
                 <p class='text-lg text-purple-800 sm:text-xl text-opacity-90'>
                     Vous pouvez nous joindre par téléphone à la MDA les lundis de 13h à 17h et les mardis, mercredis, jeudis, vendredi de 9h à 12h et de 13h à 17h.
+                </p>
+                <p class='text-lg text-purple-800 sm:text-xl text-opacity-90 mt-4'>
                     Tous les après-midi, espace d'accueil ouvert de 13h à 17h. (il n'est pas possible d'avoir un entretien sans rendez-vous).
                 </p>
             </div>
@@ -92,7 +94,7 @@
 
         </div>
 
-        <div class='grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2 sm:gap-6 xl:gap-12'>
+        <div class='grid grid-cols-1 gap-4 sm:mt-12 mt-4 sm:grid-cols-2 sm:gap-6 xl:gap-12'>
 
             <div class='px-4 py-8 bg-teal-50 sm:col-span-2 lg:col-span-1 sm:p-8 sm:py-10 rounded-3xl'>
                 <div class="flex sm:flex-col lg:flex-row">

@@ -1,4 +1,4 @@
-<section class='px-4 pt-16 sm:pt-56 sm:px-6 lg:px-8 bg-purple-50'>
+<section id="qui-sommes-nous" class='px-4 pt-16 sm:pt-56 sm:px-6 lg:px-8 bg-purple-50'>
 
     <div class='max-w-screen-xl mx-auto'>
 
@@ -6,8 +6,8 @@
             <span class="relative block">
                 Qui
                 <span class='relative'>
-                    <img class='absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14' src='images/underline-simple-light-purple.svg'>
-                    <span class='relative'>sommes-nous</span>
+                    <img class='absolute inset-0 transform translate-y-8 sm:translate-y-11 xl:translate-y-11' src='images/underline-simple-light-purple.svg'>
+                    <span class='relative'>Sommes-Nous</span>
                 </span>
                 ?
             </span>

@@ -1,4 +1,4 @@
-<section id="nos-publics" class='px-4 pt-16 pb-24 overflow-hidden sm:pb-28 md:pb-0 sm:pt-24 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
+<section id="nos-publics" class='px-4 pt-12 pb-12 overflow-hidden sm:pb-28 md:pb-0 sm:pt-24 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
 
     <div class='max-w-xl mx-auto md:max-w-screen-xl'>
         <div class='md:grid md:grid-cols-2 md:gap-12 lg:gap-16'>
@@ -7,7 +7,7 @@
                     <span class="relative block">
                         Nos
                         <span class='relative'>
-                            <img class='absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14' src='images/underline-simple-light-purple.svg'>
+                            <img class='absolute inset-0 transform translate-y-8 sm:translate-y-11 xl:translate-y-12' src='images/underline-simple-light-purple.svg'>
                             <span class='relative'> Publics</span>
                         </span>
                     </span>

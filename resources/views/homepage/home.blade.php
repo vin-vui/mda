@@ -32,7 +32,7 @@
                         <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
                 </a>
-                <a href='#' class="mt-6 text-lg font-medium text-purple-900 bg-purple-200 sm:mt-0 sm:ml-6 btn hover:text-white hover:bg-purple-600 group">
+                {{-- <a href='#' class="mt-6 text-lg font-medium text-purple-900 bg-purple-200 sm:mt-0 sm:ml-6 btn hover:text-white hover:bg-purple-600 group">
                     Nos prochains événements
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -40,7 +40,7 @@
                         <line x1="15" y1="16" x2="19" y2="12" />
                         <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
-                </a>
+                </a> --}}
             </div>
         </div>
 

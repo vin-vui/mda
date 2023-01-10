@@ -1,4 +1,4 @@
-<section class='relative overflow-hidden bg-purple-50'>
+<section id="resado" class='relative overflow-hidden bg-purple-50'>
 
     <!-- Purple background to fill in right gap -->
     <div class='absolute inset-y-0 right-0 w-full max-w-screen-xl ml-auto bg-purple-600 rounded-l-5xl'></div>
