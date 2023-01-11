@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class='mt-16 md:mt-72 md:grid md:grid-cols-2 md:gap-8 lg:gap-16'>
+        <div class='mt-16 md:mt-72 md:-mb-72 md:grid md:grid-cols-2 md:gap-8 lg:gap-16'>
             <div class='relative'>
                 <img src='images/curved-dotted-line.svg' class='absolute top-0 hidden -translate-y-1/2 md:block left-1/2' style="width: calc(50% + 4rem);">
 

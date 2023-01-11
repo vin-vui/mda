@@ -18,7 +18,7 @@
                 </a>
                 <a href="#actualites">
                     <div class="relative p-0.5 group">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Dernières Actualités</span>
+                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Actualités et Ateliers</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
@@ -80,7 +80,7 @@
 
                             <a href="#actualites">
                                 <div class="relative p-0.5 group">
-                                    <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">Dernières Actualités</span>
+                                    <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">Actualités et Ateliers</span>
                                     <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                                 </div>
                             </a>
