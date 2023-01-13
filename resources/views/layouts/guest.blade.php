@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    
+
     <!-- Fonts GDPR friendly -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -26,10 +26,12 @@
 </head>
 <body>
 
+    @if(request()->routeIs('homepage'))
     <header class="bg-purple-50">
         @include('components.contact-header')
         @include('components.navigation')
     </header>
+    @endif
 
     {{ $slot }}
 

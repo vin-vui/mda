@@ -6,7 +6,7 @@
 
             <!-- Site branding -->
             <div class="flex-grow-0 flex-shrink-0 w-60">
-                <a href="index.html">
+                <a href="{{ route('homepage') }}">
                     <img src="images/logo-mda.png" alt="Bright" class="h-auto" />
                 </a>
             </div>

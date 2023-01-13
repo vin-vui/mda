@@ -11,11 +11,8 @@
 
     {{-- <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 justify-items-center mx-auto gap-4 sm:my-24 my-12"> --}}
     <div class="flex flex-col sm:flex-row flex-wrap justify-between items-center gap-4 sm:my-24 my-12">
-        <img class="h-24" src="images/chn.png" alt="">
-        <img class="h-24" src="images/ars.png" alt="">
-        <img class="h-24" src="images/besancon.png" alt="">
-        <img class="h-24" src="images/doubs.png" alt="">
-        <img class="h-24" src="images/minsiterjustice.png" alt="">
-        <img class="h-24" src="images/edunat.png" alt="">
+        @foreach (App\Models\Partner::all() as $partner)
+        <img src="{{ Storage::disk('uploads')->url($partner->url) }}" class="h-24" alt="">
+        @endforeach
     </div>
 </section>
