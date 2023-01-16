@@ -51,12 +51,25 @@ class Partners extends Component
 
     public function store()
     {
+        $save_image = false;
+
         $dataValid = $this->validate([
-            'url' => 'required|image',
+            'url' => 'nullable',
             'label' => 'nullable',
         ]);
 
-        $dataValid['url'] = Storage::disk('uploads')->put('/', $this->url);
+        if ($this->partner_id != '') {
+            $partner = Partner::find($this->partner_id);
+            if ($this->url != $partner->url) {
+                $save_image = true;
+            }
+        } else {
+            $save_image = true;
+        }
+
+        if ($save_image) {
+            $dataValid['url'] = Storage::disk('uploads')->put('/', $this->url);
+        }
 
         Partner::updateOrCreate(['id' => $this->partner_id], $dataValid);
 

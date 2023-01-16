@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('partners', function (Blueprint $table) {
+        Schema::create('seminars', function (Blueprint $table) {
             $table->id();
-            $table->string('url')->nullable();
-            $table->string('label')->nullable();
+            $table->date('date')->nullable();
+            $table->string('image')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->boolean('display')->nullable();
+            $table->enum('type', ['atelier', 'actualité'])->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partners');
+        Schema::dropIfExists('seminars');
     }
 };

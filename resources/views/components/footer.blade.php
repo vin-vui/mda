@@ -21,10 +21,8 @@
                 Toutes les MDA de France se sont fédérées dans une association nationale des Maisons des Adolescents.
             </div>
 
-            <!-- Social links -->
             <div class='w-full mt-5 lg:mt-6'>
                 <div class='flex justify-start space-x-4'>
-
                     <!-- Instagram -->
                     <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="https://www.instagram.com/Maison_ado_25/?fbclid=IwAR2Y2mm7b6mNHixQlPg4q7AinEE1vD4ne8Miri86j5K89RTnYlhM3TLJ42U" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -34,7 +32,6 @@
                             <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
                         </svg>
                     </a>
-
                     <!-- Facebook -->
                     <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="https://www.facebook.com/profile.php?id=100054914929152" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -42,64 +39,31 @@
                             <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                         </svg>
                     </a>
-
-                    <!-- anmda -->
-                    {{-- <a class="flex items-center justify-center w-10 h-10 text-white transition duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="https://anmda.fr" target="_blank">
-                        <svg class="w-5 h-5" width="44" height="44" viewBox="0 0 20 20">
-                            <path fill="currentColor" d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0ZM1.11 9.68h2.51c.04.91.167 1.814.38 2.7H1.84a7.86 7.86 0 0 1-.73-2.7Zm8.57-5.4V1.19a4.13 4.13 0 0 1 2.22 2c.205.347.386.708.54 1.08l-2.76.01Zm3.22 1.35c.232.883.37 1.788.41 2.7H9.68v-2.7h3.22ZM8.32 1.19v3.09H5.56A8.53 8.53 0 0 1 6.1 3.2a4.13 4.13 0 0 1 2.22-2.01Zm0 4.44v2.7H4.7c.04-.912.178-1.817.41-2.7h3.21Zm-4.7 2.69H1.11a7.86 7.86 0 0 1 .73-2.7H4a14.13 14.13 0 0 0-.38 2.7ZM4.7 9.68h3.62v2.7H5.11a12.88 12.88 0 0 1-.41-2.7Zm3.63 4v3.09a4.13 4.13 0 0 1-2.22-2a8.53 8.53 0 0 1-.54-1.08l2.76-.01Zm1.35 3.09v-3.04h2.76a8.53 8.53 0 0 1-.54 1.08a4.13 4.13 0 0 1-2.22 2v-.04Zm0-4.44v-2.7h3.62a12.88 12.88 0 0 1-.41 2.7H9.68Zm4.71-2.7h2.51a7.86 7.86 0 0 1-.73 2.7H14c.21-.87.337-1.757.38-2.65l.01-.05Zm0-1.35A14.13 14.13 0 0 0 14 5.63h2.16c.403.85.65 1.764.73 2.7l-2.5-.05Zm1-4H13.6a8.92 8.92 0 0 0-1.39-2.52a8 8 0 0 1 3.14 2.52h.04Zm-9.6-2.52A8.92 8.92 0 0 0 4.4 4.28H2.65a8 8 0 0 1 3.14-2.52Zm-3.15 12H4.4a8.92 8.92 0 0 0 1.39 2.52a8 8 0 0 1-3.14-2.55l-.01.03Zm9.56 2.52a8.92 8.92 0 0 0 1.39-2.52h1.76a8 8 0 0 1-3.14 2.48l-.01.04Z" />
-                        </svg>
-                    </a> --}}
                 </div>
             </div>
-
         </div>
 
-        <!-- Block 2 -->
         <div class='flex-shrink sm:order-3 lg:order-none lg:col-span-2'>
             <h6 class='relative text-xl font-bold tracking-wide text-purple-900'>
                 <span class='relative z-20'>Liens utiles</span>
                 <span class='absolute left-0 z-10 w-12 h-1 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 -bottom-1'></span>
             </h6>
-
-            <!-- Program links -->
-            <ul class='mt-6 text-lg divide-y divide-purple-400/20'>
-                <li class='pb-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a target="_blank" href='https://anmda.fr/'>
-                        ANMDA
-                    </a>
-                </li>
+            <ul class='mt-4 text-lg divide-y divide-purple-400/20'>
+                @foreach (App\Models\Link::all() as $link)
                 <li class='py-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a target="_blank" href='https://www.ch-novillars.fr/'>
-                        Centre hospitalier de Novillars
+                    <a target="_blank" href='{{ $link->url }}'>
+                        {{ $link->label }}
                     </a>
                 </li>
-                <li class='py-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a target="_blank" href='https://www.filsantejeunes.com/'>
-                        Fil Santé Jeunes
-                    </a>
-                </li>
-                <li class='py-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a target="_blank" href='https://www.allo119.gouv.fr/'>
-                        Allo enfance maltraitée
-                    </a>
-                </li>
-                <li class='pt-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a target="_blank" href='https://www.phare.org/'>
-                        Association PHARE
-                    </a>
-                </li>
+                @endforeach
             </ul>
-
         </div>
 
-        <!-- Block 3 -->
         <div class='flex-shrink sm:order-4 lg:order-none lg:col-span-2'>
             <h6 class='relative text-xl font-bold tracking-wide text-purple-900'>
                 <span class='relative z-20'>Pages du site</span>
                 <span class='absolute left-0 z-10 w-12 h-1 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 -bottom-1'></span>
             </h6>
-
-            <!-- Site links -->
             <ul class='mt-6 text-lg divide-y divide-purple-400/20'>
                 <li class='pb-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
                     <a href='index.html'>
@@ -117,7 +81,6 @@
                     </a>
                 </li>
             </ul>
-
         </div>
 
         <!-- Block 4 -->
