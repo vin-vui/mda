@@ -23,5 +23,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'secretariat',
+            'email' => 'secretariat.resado@ch-novillars.fr',
+            'password' => Hash::make('resado'),
+        ]);
     }
 }
