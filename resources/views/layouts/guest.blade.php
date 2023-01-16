@@ -23,6 +23,7 @@
 
     <!-- Scripts -->
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    <script defer data-domain="project-mda.vinvui.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
