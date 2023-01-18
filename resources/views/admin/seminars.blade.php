@@ -37,10 +37,10 @@
                         <td class="px-4 whitespace-nowrap text-center py-4 text-sm font-medium text-gray-900">
                             @switch($seminar->type)
                             @case('atelier')
-                            <span class="bg-purple-100 text-purple-900 py-1 px-2 rounded-xl">atelier</span>
+                            <span class="bg-yellow-200 text-purple-900 py-1 px-2 rounded-xl">atelier</span>
                             @break
                             @case('actualité')
-                            <span class="bg-yellow-100 text-purple-900 py-1 px-2 rounded-xl">actualité</span>
+                            <span class="bg-teal-100 text-purple-900 py-1 px-2 rounded-xl">actualité</span>
                             @break
                             @endswitch
                         </td>

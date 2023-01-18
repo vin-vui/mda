@@ -30,7 +30,6 @@
                                     </button>
                                 </span>
                             </x-slot>
-
                             <x-slot name="content">
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                     Accueil

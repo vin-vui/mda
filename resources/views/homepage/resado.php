@@ -66,7 +66,7 @@
                     </p>
 
                     <div class="mt-12 ">
-                        <span class='inline-block sm:px-4 sm:py-2 px-2 py-1 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-2'>
+                        <span class='inline-block sm:px-4 sm:py-2 px-2 py-1 bg-purple-200 text-purple-700 font-semibold rounded-full shadow-md -rotate-2'>
                             Numéro de téléphone pour les professionnels
                         </span>
                     </div>

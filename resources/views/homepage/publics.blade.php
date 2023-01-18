@@ -48,8 +48,8 @@
                         <h3 class='text-purple-900 h3 mb-2 sm:mb-3'>
                             Adolescents
                         </h3>
-                        <span class='inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-2'>
-                            de 12 à 20 ans
+                        <span class="inline-block px-2 py-1 relative bg-purple-200 text-purple-700 font-semibold -rotate-2 leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">
+                        de 12 à 20 ans
                         </span>
                         <p class='max-w-2xl mt-3 text-lg leading-loose text-purple-800'>
                             Lorsque les difficultés sont plus importantes, l'équipe de la MDA oriente le jeune vers des soins les plus adaptés, médicaux ou psychologiques en dehors de la MDA. D'autres orientations sont possibles en fonction des besoins du jeune : centre d'animation, service de planification familiale, activité sportive, droits sociaux ou juridiques, etc.
