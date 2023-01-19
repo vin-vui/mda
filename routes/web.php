@@ -24,4 +24,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('partenaires', Partners::class)->name('partners');
     Route::get('liens-utiles', Links::class)->name('links');
     Route::get('actus-ateliers', Seminars::class)->name('seminars');
+
+    Route::get('accueil', function () { return view('admin.sections.home'); })->name('section.home');
+    Route::get('nos-publics', function () { return view('admin.sections.publics'); })->name('section.publics');
+    Route::get('resado', function () { return view('admin.sections.resado'); })->name('section.resado');
+    Route::get('qui-sommes-nous', function () { return view('admin.sections.us'); })->name('section.us');
+    Route::get('informations-pratiques', function () { return view('admin.sections.informations'); })->name('section.informations');
+    Route::get('pied-de-page', function () { return view('admin.sections.footer'); })->name('section.footer');
 });

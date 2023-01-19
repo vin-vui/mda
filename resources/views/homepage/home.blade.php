@@ -4,7 +4,6 @@
         <div class='flex flex-col items-center justify-center lg:items-start lg:col-span-6'>
             <div>
                 <span class="inline-block px-2 py-1 relative bg-purple-200 text-purple-700 font-semibold -rotate-2 leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">
-
                     Bienvenue à
                 </span>
             </div>
@@ -19,9 +18,7 @@
                 </span>
             </h1>
 
-            <p class='max-w-2xl mt-6 text-xl leading-loose text-center text-purple-800 lg:text-left'>
-                Ouverte aux adolescents de 12 à 20 ans, leurs parents et entourage mais aussi aux professionnels intervenants auprès d'adolescents, la Maison de l'Adolescent offre un lieu d'accueil, d'écoute, d'information, d'accompagnement et d'orientations gratuites et confidentielles.
-            </p>
+            <p class='max-w-2xl mt-6 text-xl leading-loose text-center text-purple-800 lg:text-left whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'HOME')->first()->description }}</p>
 
             <div class='flex flex-col items-center mt-8 overflow-hidden sm:flex-row'>
                 <a href='#actualites' class="text-lg font-semibold text-purple-900 bg-yellow-500 btn hover:bg-yellow-600 group">
@@ -38,7 +35,7 @@
 
         <div class='flex flex-col justify-center max-w-3xl mx-auto mt-16 lg:mt-0 lg:max-w-none lg:col-span-6'>
             <div class='relative'>
-                <img class="w-full h-auto rounded-3xl" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" alt="Bright Photo Collage">
+                <img class="w-full h-auto rounded-3xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'HOME')->first()->image_1) }}" alt="">
             </div>
         </div>
     </div>

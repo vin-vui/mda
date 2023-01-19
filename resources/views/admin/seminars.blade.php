@@ -1,4 +1,4 @@
-<div class="">
+<div class="pb-24">
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
@@ -13,6 +13,8 @@
             </div>
         </div>
     </header>
+
+    @livewire('sections', ['section_name' => 'SEMINARS'])
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl flex flex-col sm:flex-row flex-wrap items-center sm:my-12 my-6 py-8 px-6 gap-4">

@@ -21,18 +21,18 @@
                     class='absolute top-0 hidden h-auto transform translate-y-12 right-2 w-80' alt=''>
 
                 <div class='col-span-2 transform aspect-w-3 aspect-h-4 2xl:-translate-x-16'>
-                    <img src='https://images.unsplash.com/photo-1589424987100-72303ec43d04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=692&q=80'
+                    <img src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'RESADO')->first()->image_1) }}'
                         class='object-cover w-full h-full rounded-3xl 2xl:rounded-4xl' alt='Program description 01'>
                 </div>
                 <div class='transform 2xl:-translate-x-16'>
                     <div class='aspect-w-1 aspect-h-1'>
-                        <img src='https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
+                        <img src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'RESADO')->first()->image_2) }}'
                             class='object-cover w-full h-full rounded-3xl 2xl:rounded-4xl' alt='Program description 02'>
                     </div>
                 </div>
                 <div class='transform 2xl:-translate-x-16'>
                     <div class='aspect-w-1 aspect-h-1'>
-                        <img src='https://images.unsplash.com/photo-1562552052-4e9f2d8e8a4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+                        <img src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'RESADO')->first()->image_3) }}'
                             class='object-cover w-full h-full rounded-3xl 2xl:rounded-4xl' alt='Program description 03'>
                     </div>
                 </div>
@@ -44,28 +44,8 @@
                     <h2 class="text-5xl">
                         Rés'Ado
                     </h2>
-                    <p>
-                        « Rés'Ado Besançon » contribue à fédérer et à tisser des liens de partenariats avec les
-                        professionnels autour des questions de l'adolescence. Aux services des professionnels interne à
-                        la structure ou externes comme partenaires, il favorise, par des réunions d'échanges, des
-                        actions de prévention, des actions d'informations et de formations la connaissance mutuelle des
-                        professionnels entre eux, de leurs missions respectives dans le respect, la reconnaissance et la
-                        valorisation du travail de chacun.
-                    </p>
-                    <p>
-                        Par ces échanges d'expérience et ces temps de formations, « Rés'Ado Besançon » favorise le
-                        décloisonnement des services en direction des adolescents, œuvre ainsi à la fluidité de leur
-                        parcours de santé en amont et en aval des dispositifs et à l'interconnaissance des
-                        professionnels issus d'univers complémentaires.
-                    </p>
-                    <p>
-                        Il intervient de plus dans le champ de la prévention en mettant en place des actions qui peuvent
-                        prendre différentes formes, à la demande des partenaires (organisation de conférences débat, de
-                        colloques, de rencontres entre professionnels, de veille informative, d'action de prévention
-                        spécifique dans les établissements, de sessions de formations…).
-                    </p>
-
-                    <div class="mt-12 ">
+                    <p class='whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'RESADO')->first()->description }}</p>
+                    <div class="mt-12">
                         <span class='inline-block sm:px-4 sm:py-2 px-2 py-1 bg-purple-200 text-purple-700 font-semibold rounded-full shadow-md -rotate-2'>
                             Numéro de téléphone pour les professionnels
                         </span>

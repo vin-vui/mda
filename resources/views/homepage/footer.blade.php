@@ -1,6 +1,4 @@
 <footer class='px-4 pt-16 space-y-8 divide-y sm:pt-20 sm:px-6 lg:px-8 divide-purple-400/20'>
-
-    <!-- Top section: blocks -->
     <div class='grid max-w-md mx-auto gap-y-8 sm:gapy-12 sm:gap-x-8 md:gap-x-12 sm:max-w-none lg:max-w-screen-2xl sm:grid-cols-2 lg:grid-cols-11 lg:gap-8 xl:gap-12'>
 
         <!-- Block 1 -->
@@ -15,16 +13,12 @@
                 </div>
             </div>
 
-            <!-- Mission statement -->
-            <div class='mt-6 text-lg text-purple-800'>
-                L'Association Nationale des Maisons des Adolescents - ANMDA
-                Toutes les MDA de France se sont fédérées dans une association nationale des Maisons des Adolescents.
-            </div>
+            <p class='mt-6 text-lg text-purple-800 whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'FOOTER')->first()->description }}</p>
 
             <div class='w-full mt-5 lg:mt-6'>
                 <div class='flex justify-start space-x-4'>
                     <!-- Instagram -->
-                    <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="https://www.instagram.com/Maison_ado_25/?fbclid=IwAR2Y2mm7b6mNHixQlPg4q7AinEE1vD4ne8Miri86j5K89RTnYlhM3TLJ42U" target="_blank">
+                    <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'instagram')->first()->label }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <rect x="4" y="4" width="16" height="16" rx="4" />
@@ -33,7 +27,7 @@
                         </svg>
                     </a>
                     <!-- Facebook -->
-                    <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="https://www.facebook.com/profile.php?id=100054914929152" target="_blank">
+                    <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'facebook')->first()->label }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
@@ -108,7 +102,7 @@
                             Adresse
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            13 rue des Jardins - 25000 Besançon
+                            {{ App\Models\Information::where('title', 'adresse')->first()->label }}
                         </p>
                     </div>
                 </li>
@@ -129,7 +123,7 @@
                             Email
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            secretariat.resado@ch-novillars.fr
+                            {{ App\Models\Information::where('title', 'email')->first()->label }}
                         </p>
                     </div>
                 </li>
@@ -148,7 +142,7 @@
                             Téléphone
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            03 81 57 97 67
+                            {{ App\Models\Information::where('title', 'téléphone')->first()->label }}
                         </p>
                     </div>
                 </li>

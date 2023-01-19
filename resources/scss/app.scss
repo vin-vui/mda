@@ -6,5 +6,25 @@
 @import 'custom/utilities.scss';
 @import 'custom/hamburger.scss';
 
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #FDEBC2;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #FDEBC2;
+    border-radius: 14px;
+  }
+
 // See Alpine.js: https://alpinejs.dev/directives/cloak
 [x-cloak] { display: none !important; }

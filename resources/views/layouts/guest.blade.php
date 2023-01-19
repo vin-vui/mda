@@ -29,8 +29,8 @@
 
     @if(request()->routeIs('homepage'))
     <header class="bg-purple-50">
-        @include('components.contact-header')
-        @include('components.navigation')
+        @include('homepage.contact-header')
+        @include('homepage.navigation')
     </header>
     @endif
 

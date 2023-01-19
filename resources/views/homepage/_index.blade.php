@@ -29,6 +29,6 @@
     @include('homepage.partners')
 
     <!-- Footer -->
-    @include('components.footer')
+    @include('homepage.footer')
 
 </x-guest-layout>

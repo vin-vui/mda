@@ -31,22 +31,22 @@
                                 </span>
                             </x-slot>
                             <x-slot name="content">
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('section.home') }}">
                                     Accueil
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('section.publics') }}">
                                     Nos Publics
                                 </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('seminars') }}">
                                     Actualités et Ateliers
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('section.resado') }}">
                                     Rés'Ado
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('section.us') }}">
                                     Qui Sommes-Nous ?
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('section.informations') }}">
                                     Informations Pratiques
                                 </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('partners') }}">
@@ -54,6 +54,9 @@
                                 </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('links') }}">
                                     Liens Utiltes
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('section.footer') }}">
+                                    Pied de Page
                                 </x-jet-dropdown-link>
                             </x-slot>
                         </x-jet-dropdown>

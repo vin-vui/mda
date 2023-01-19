@@ -15,12 +15,7 @@
                 </h2>
             </div>
             <div class='mt-3 sm:mt-4 lg:mt-0'>
-                <p class='text-lg text-purple-800 sm:text-xl text-opacity-90'>
-                    Vous pouvez nous joindre par téléphone à la MDA les lundis de 13h à 17h et les mardis, mercredis, jeudis, vendredi de 9h à 12h et de 13h à 17h.
-                </p>
-                <p class='text-lg text-purple-800 sm:text-xl text-opacity-90 mt-4'>
-                    Tous les après-midi, espace d'accueil ouvert de 13h à 17h. (il n'est pas possible d'avoir un entretien sans rendez-vous).
-                </p>
+                <p class='text-lg text-purple-800 sm:text-xl text-opacity-90 whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'INFORMATIONS')->first()->description }}</p>
             </div>
         </div>
 
@@ -42,7 +37,7 @@
                             Adresse
                         </h5>
                         <p class="mt-1.5 text-base text-purple-800 leading-relaxed">
-                            13 rue des Jardins - 25000 Besançon
+                            {{ App\Models\Information::where('title', 'adresse')->first()->label }}
                         </p>
                     </div>
                 </div>
@@ -64,7 +59,7 @@
                             Email
                         </h5>
                         <p class="mt-1.5 text-base text-purple-800 leading-relaxed">
-                            secretariat.resado@ch-novillars.fr
+                            {{ App\Models\Information::where('title', 'email')->first()->label }}
                         </p>
                     </div>
                 </div>
@@ -86,7 +81,7 @@
                             Téléphone
                         </h5>
                         <p class="mt-1.5 text-base text-purple-800 leading-relaxed">
-                            03 81 53 97 67
+                            {{ App\Models\Information::where('title', 'téléphone')->first()->label }}
                         </p>
                     </div>
                 </div>
@@ -110,7 +105,7 @@
                             Accès Tramway
                         </h5>
                         <p class="mt-1.5 text-base text-purple-800 leading-relaxed">
-                            Ligne 1 - arrêt Tristan Bernard (6 mn à pied)
+                            {{ App\Models\Information::where('title', 'accès tramway')->first()->label }}
                         </p>
                     </div>
                 </div>
@@ -130,7 +125,7 @@
                             Accès Bus
                         </h5>
                         <p class="mt-1.5 text-base text-purple-800 leading-relaxed">
-                            Ligne 5 - arrêt Mermoz (6 mn à pied)
+                            {{ App\Models\Information::where('title', 'accès bus')->first()->label }}
                         </p>
                     </div>
                 </div>

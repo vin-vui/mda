@@ -29,7 +29,7 @@
                             Adresse
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            13 rue des Jardins - 25000 Besançon
+                            {{ App\Models\Information::where('title', 'adresse')->first()->label }}
                         </p>
                     </div>
                 </li>
@@ -49,7 +49,7 @@
                             Email
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            secretariat.resado@ch-novillars.fr
+                            {{ App\Models\Information::where('title', 'email')->first()->label }}
                         </p>
                     </div>
                 </li>
@@ -68,7 +68,7 @@
                             Téléphone
                         </h5>
                         <p class="mt-0.5 text-sm text-purple-800 leading-relaxed text-opacity-90">
-                            03 81 57 97 67
+                            {{ App\Models\Information::where('title', 'téléphone')->first()->label }}
                         </p>
                     </div>
                 </li>

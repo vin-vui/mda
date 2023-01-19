@@ -11,18 +11,16 @@
                     </span>
                 </span>
             </h2>
-            <p class='max-w-2xl mx-auto mt-3 text-xl leading-relaxed text-purple-800 lg:mt-4 lg:text-center'>
-                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-            </p>
+            <p class='max-w-2xl mx-auto mt-3 text-xl leading-relaxed text-purple-800 lg:mt-4 lg:text-center whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'SEMINARS')->first()->description }}</p>
         </div>
         <div class='mt-12 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 sm:mt-16'>
             @foreach (App\Models\Seminar::where('display', true)->latest()->get() as $seminar)
-            <div class='grid w-full @if($seminar->type === 'atelier') bg-yellow-200 @else bg-teal-100 @endif rounded-2xl sm:grid-cols-12 sm:mb-0 mb-8'>
+            <div class='grid w-full @if($seminar->type === 'atelier') bg-yellow-200 @else bg-teal-50 @endif rounded-2xl sm:grid-cols-12 sm:mb-0 mb-8'>
                 <div class='@if($loop->even) order-1 sm:order-2 sm:rounded-r-2xl sm:rounded-tl-none @else sm:rounded-l-2xl sm:rounded-tr-none @endif rounded-t-2xl h-48 bg-cover bg-center bg-no-repeat sm:h-full sm:col-span-4' style="background-image: url('{{ Storage::disk('uploads')->url($seminar->image) }}');">
                 </div>
                 <div class='@if($loop->even) order-2 sm:order-1 @endif flex flex-col justify-start h-full px-6 py-8 sm:col-span-8 sm:py-10 sm:px-8 lg:px-6 xl:px-8'>
                     <div class="flex flex-col justify-start items-start">
-                        <div class="inline-flex capitalize items-center justify-center px-3.5 py-0.5 text-xl -rotate-2 {{ $seminar->type === 'atelier' ? 'bg-yellow-400' : 'bg-teal-300' }} text-purple-700 font-semibold leading-6 align-top rounded-xl">
+                        <div class="inline-flex capitalize items-center justify-center px-3.5 py-0.5 text-xl -rotate-2 {{ $seminar->type === 'atelier' ? 'bg-yellow-400' : 'bg-teal-200' }} text-purple-700 font-semibold leading-6 align-top rounded-xl">
                             {{ $seminar->type }}
                         </div>
                         <div class="flex items-center justify-center px-3.5 py-0.5 text-sm -rotate-1  align-top rounded-xl">
