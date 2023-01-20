@@ -27,16 +27,7 @@
 
         <div class="min-h-screen bg-purple-50">
             @livewire('navigation-menu')
-
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <main>
+            <main class="relative z-40">
                 {{ $slot }}
             </main>
         </div>

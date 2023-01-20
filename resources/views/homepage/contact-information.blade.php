@@ -136,7 +136,7 @@
     </div>
 
     <div class='mt-16 lg:mx-auto lg:mt-24 rounded-3xl lg:max-w-screen-2xl'>
-        <iframe class='w-full rounded-3xl' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.269983419407!2d6.034697151211793!3d47.25042372040534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478d62cd6f660d45%3A0x4d5fd258535e430e!2sMaison%20de%20l&#39;adolescent!5e0!3m2!1sfr!2sfr!4v1673263095354!5m2!1sfr!2sfr" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class='w-full rounded-3xl h-96' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=6.034388244152069%2C47.24919029590605%2C6.0396453738212585%2C47.25143700848142&amp;layer=mapnik&amp;marker=47.25031366410702%2C6.037016808986664"></iframe>
     </div>
 
 </section>

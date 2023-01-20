@@ -1,13 +1,16 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-purple-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <header class="bg-white shadow sticky top-16 -mt-1">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-6">
+                <h2 class="font-semibold text-xl text-purple-800 leading-tight">
+                    Dashboard
+                </h2>
+            </div>
+        </div>
+    </header>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> --}}
             <div class="mx-auto flex items-center">
                 <dl class="relative overflow-hidden flex items-center gap-8 rounded-3xl bg-white px-4 pt-5 pb-12 shadow-md sm:px-6 sm:pt-6">
                     <div>
@@ -43,7 +46,6 @@
                     </div>
                 </dl>
             </div>
-            {{-- </div> --}}
         </div>
     </div>
 </x-app-layout>
