@@ -14,7 +14,7 @@
             <p class='max-w-2xl mx-auto mt-3 text-xl leading-relaxed text-purple-800 lg:mt-4 lg:text-center whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'SEMINARS')->first()->description }}</p>
         </div>
         <div class='mt-12 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 sm:mt-16'>
-            @foreach (App\Models\Seminar::where('display', true)->latest()->get() as $seminar)
+            @foreach (App\Models\Seminar::where('display', true)->latest('date')->get() as $seminar)
             <div class='grid w-full @if($seminar->type === 'atelier') bg-yellow-200 @else bg-teal-50 @endif rounded-2xl sm:grid-cols-12 sm:mb-0 mb-8'>
                 <div class='@if($loop->even) order-1 sm:order-2 sm:rounded-r-2xl sm:rounded-tl-none @else sm:rounded-l-2xl sm:rounded-tr-none @endif rounded-t-2xl h-48 bg-cover bg-center bg-no-repeat sm:h-full sm:col-span-4' style="background-image: url('{{ Storage::disk('uploads')->url($seminar->image) }}');">
                 </div>

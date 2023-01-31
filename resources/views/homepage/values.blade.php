@@ -8,13 +8,7 @@
                     Consultations spécialisées
                 </h3>
 
-                {{-- <p class="max-w-xl mx-auto mt-4 text-lg leading-relaxed text-purple-800 sm:text-center lg:text-left md:mt-5 lg:mx-0">
-                    Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-                </p> --}}
-
                 <div class='grid max-w-4xl gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-1 sm:mx-auto lg:mx-0 lg:max-w-md'>
-
-                    <!-- Value 1 -->
                     <div class="flex">
                         <div class="w-14">
                             <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
@@ -28,8 +22,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Value 2 -->
                     <div class="flex">
                         <div class="w-14">
                             <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
@@ -43,8 +35,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Value 3 -->
                     <div class="flex">
                         <div class="w-14">
                             <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
@@ -58,8 +48,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Value 4 -->
                     <div class="flex">
                         <div class="w-14">
                             <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
@@ -73,16 +61,18 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
             <div class='w-full max-w-xl mx-auto my-auto lg:max-w-none mt-8 sm:mt-0'>
                 <div class='aspect-w-3 aspect-h-4'>
-                    <img class='object-cover w-full h-full rounded-3xl' src='https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='values'>
+                    <img class='object-cover w-full h-full rounded-3xl' src='https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='doctor image'>
                 </div>
             </div>
+
+            <button @click="modalOpen = false" class="flex justify-center w-full px-4 border rounded-3xl mt-4 py-2">
+                fermer
+            </button>
 
         </div>
     </div>

@@ -1,4 +1,4 @@
-<div class="">
+<div class="pb-24">
     <header class="bg-white shadow sticky top-16 -mt-1">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-6">
@@ -15,11 +15,17 @@
     </header>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl flex flex-col sm:flex-row flex-wrap items-center sm:my-12 my-6 py-8 px-6 gap-4">
+        <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl grid grid-cols-4 sm:my-12 my-6 py-8 px-6 gap-4">
             @foreach ($partners as $partner)
-            <div wire:click="edit({{ $partner->id }})" class="w-64 rounded-3xl mx-auto hover:bg-yellow-100 cursor-pointer transition-all p-8">
-                <img src="{{ Storage::disk('uploads')->url($partner->url) }}" class="mx-auto" alt="">
-                {{ $partner->label }}
+            <div class="">
+                <div wire:click="edit({{ $partner->id }})" class="w-full rounded-3xl mx-auto hover:bg-yellow-100 cursor-pointer transition-all p-8">
+                    <img src="{{ Storage::disk('uploads')->url($partner->url) }}" class="mx-auto" alt="">
+                </div>
+                @if($partner->label)
+                <div class="mt-2 text-center">
+                    <span class="bg-yellow-400 text-purple-900 rounded-full py-1 px-3">{{ $partner->label }}</span>
+                </div>
+                @endif
             </div>
             @endforeach
         </div>
@@ -49,31 +55,38 @@
 
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div class="">
-                        <div class="mb-4">
-                            <label class="block">
-                                <x-jet-label for="url" value="Image" />
-                                <input wire:model="url" type="file" class="block w-full cursor-pointer text-sm mt-2 border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-                            </label>
-                            @error('url') <span class="text-red-500">{{ $message }}</span>@enderror
+                        <div class="">
+                            <x-jet-label value="Image" />
+                            @if (!is_string($this->url) && $this->url != null)
+                            <img src="{{ $this->url->temporaryUrl() }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                            @else
+                            <img src="{{ Storage::disk('uploads')->url($this->url) }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                            @endif
                         </div>
-                        <div wire:loading wire:target="url" wire:key="url"><i class="fa fa-spinner fa-spin mt-2 ml-2"></i> Uploading</div>
-                        <div class="flex gap-4">
-                            @if ($this->partner_id != '')
-                            <div class="">
-                                <x-jet-label value="Image actuelle" />
-                                <img wire:ignore src="{{ Storage::disk('uploads')->url($this->url) }}" alt="" class="mt-2 h-24">
-                            </div>
-                            @endif
-                            @if (!is_string($this->url))
-                            <div class="">
-                                @if ($this->partner_id != '')
-                                <x-jet-label value="Remplacée par" />
-                                @else
-                                <x-jet-label value="Apreçu" />
-                                @endif
-                                <img src="{{ $this->url->temporaryUrl() }}" alt="" class="mt-2 h-24">
-                            </div>
-                            @endif
+                        <div x-data="{photoName: null, photoPreview: null}">
+                            <input type="file" class="hidden" wire:model="url" x-ref="photo" />
+                            <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                                <span class="py-1">sélectionner une nouvelle image</span>
+                                <div wire:loading wire:target="url" wire:key="url">
+                                    <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                                            <path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3">
+                                                <animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0" />
+                                            </path>
+                                            <path stroke-dasharray="30" stroke-dashoffset="30" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21">
+                                                <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.3s" values="30;0" />
+                                            </path>
+                                            <path stroke-dasharray="10" stroke-dashoffset="10" d="M12 16v-7.5">
+                                                <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0" />
+                                            </path>
+                                            <path stroke-dasharray="6" stroke-dashoffset="6" d="M12 8.5l3.5 3.5M12 8.5l-3.5 3.5">
+                                                <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0" />
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </x-jet-secondary-button>
+                            @error('url') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="my-4">
                             <x-jet-label for="label" value="Label" />

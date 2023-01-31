@@ -27,7 +27,7 @@
 
         <div class="min-h-screen bg-purple-50">
             @livewire('navigation-menu')
-            <main class="relative z-40">
+            <main class="">
                 {{ $slot }}
             </main>
         </div>

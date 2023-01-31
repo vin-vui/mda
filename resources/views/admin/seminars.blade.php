@@ -33,7 +33,7 @@
                     @foreach ($seminars as $seminar)
                     <tr wire:click="edit({{ $seminar->id }})" class="cursor-pointer hover:bg-yellow-100 transition-all">
                         <td class="px-4 whitespace-nowrap py-4 text-sm font-medium text-gray-900">
-                            <img class="h-10 w-10 object-cover rounded-full" src="{{ Storage::disk('uploads')->url($seminar->image) }}" alt="">
+                            <img class="h-10 w-10 object-cover mx-auto rounded-full" src="{{ Storage::disk('uploads')->url($seminar->image) }}" alt="">
                         </td>
                         <td class="px-4 whitespace-nowrap text-center py-4 text-sm font-medium text-gray-900">{{ Carbon\Carbon::parse($seminar->date)->format('d/m/Y') }}</td>
                         <td class="px-4 whitespace-nowrap text-center py-4 text-sm font-medium text-gray-900">
@@ -64,7 +64,7 @@
 
     {{-- MODALE --}}
     @if($isOpen)
-    <div class="fixed inset-0 z-10 overflow-y-auto transition ease-out duration-400">
+    <div class="fixed inset-0 z-50 overflow-y-auto transition ease-out duration-400">
         <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 transition-opacity">
                 <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -85,33 +85,40 @@
                 </div>
 
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-                    <div class="mb-4">
-                        <label class="block">
-                            <x-jet-label for="image" value="Image" />
-                            <input wire:model="image" type="file" class="block w-full cursor-pointer text-sm mt-2 border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-                        </label>
+                    <div class="">
+                        <x-jet-label value="Image" />
+                        @if (!is_string($this->image) && $this->image != null)
+                        <img src="{{ $this->image->temporaryUrl() }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                        @else
+                        <img src="{{ Storage::disk('uploads')->url($this->image) }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                        @endif
+                    </div>
+                    <div x-data="{photoName: null, photoPreview: null}">
+                        <input type="file" class="hidden" wire:model="image" x-ref="photo" />
+                        <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <span class="py-1">sélectionner une nouvelle image</span>
+                            <div wire:loading wire:target="image" wire:key="image">
+                                <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                                        <path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3">
+                                            <animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0" />
+                                        </path>
+                                        <path stroke-dasharray="30" stroke-dashoffset="30" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21">
+                                            <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.3s" values="30;0" />
+                                        </path>
+                                        <path stroke-dasharray="10" stroke-dashoffset="10" d="M12 16v-7.5">
+                                            <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0" />
+                                        </path>
+                                        <path stroke-dasharray="6" stroke-dashoffset="6" d="M12 8.5l3.5 3.5M12 8.5l-3.5 3.5">
+                                            <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0" />
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </x-jet-secondary-button>
                         @error('image') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
-                    <div wire:loading wire:target="image" wire:key="image">Téléversement</div>
-                    <div class="flex gap-4">
-                        @if ($this->seminar_id != '')
-                        <div class="">
-                            <x-jet-label value="Image actuelle" />
-                            <img wire:ignore src="{{ Storage::disk('uploads')->url($this->image) }}" alt="" class="mt-2 h-24">
-                        </div>
-                        @endif
-                        @if (!is_string($this->image))
-                        <div class="">
-                            @if ($this->seminar_id != '')
-                            <x-jet-label value="Remplacée par" />
-                            @else
-                            <x-jet-label value="Apreçu" />
-                            @endif
-                            <img src="{{ $this->image->temporaryUrl() }}" alt="" class="mt-2 h-24">
-                        </div>
-                        @endif
-                    </div>
-                    <div class="mb-4">
+                    <div class="my-4">
                         <x-jet-label for="date" value="Date" />
                         <x-jet-input id="date" class="block mt-1 w-full" type="date" name="date" wire:model="date" />
                         @error('date') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -136,10 +143,20 @@
                     </div>
                     <div class="space-x-2 flex items-center">
                         <x-jet-label for="display" value="Publier ?" />
-                        <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
-                            <input wire:model="display" type="checkbox" name="display" id="toggle" class="toggle-checkbox text-green-600 absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
-                            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-white cursor-pointer"></label>
-                        </div>
+                        <button id="display" type="button" wire:click="changeDisplay" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 bg-gray-200" x-data="{ on: {{ $display ? 'true' : 'false' }} }" role="switch" aria-checked="{{ $display ? 'true' : 'false' }}" :aria-checked="on.toString()" @click="on = !on" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'bg-green-600': on, 'bg-gray-200': !(on) }">
+                            <span class="pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'translate-x-5': on, 'translate-x-0': !(on) }">
+                                <span class="absolute inset-0 flex h-full w-full items-center justify-center transition-opacity opacity-100 ease-in duration-200" aria-hidden="true" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'opacity-0 ease-out duration-100': on, 'opacity-100 ease-in duration-200': !(on) }">
+                                    <svg class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 12 12">
+                                        <path d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                                <span class="absolute inset-0 flex h-full w-full items-center justify-center transition-opacity opacity-0 ease-out duration-100" aria-hidden="true" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'opacity-100 ease-in duration-200': on, 'opacity-0 ease-out duration-100': !(on) }">
+                                    <svg class="h-3 w-3 text-green-600" fill="currentColor" viewBox="0 0 12 12">
+                                        <path d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
                     </div>
                 </div>
 

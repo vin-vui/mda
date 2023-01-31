@@ -1,10 +1,8 @@
 <footer class='px-4 pt-16 space-y-8 divide-y sm:pt-20 sm:px-6 lg:px-8 divide-purple-400/20'>
     <div class='grid max-w-md mx-auto gap-y-8 sm:gapy-12 sm:gap-x-8 md:gap-x-12 sm:max-w-none lg:max-w-screen-2xl sm:grid-cols-2 lg:grid-cols-11 lg:gap-8 xl:gap-12'>
 
-        <!-- Block 1 -->
         <div class='flex flex-col lg:mx-auto lg:col-span-4'>
 
-            <!-- Logo -->
             <div class='flex items-center'>
                 <div class="flex-grow-0 flex-shrink-0 w-60">
                     <a href="index.html">
@@ -17,7 +15,6 @@
 
             <div class='w-full mt-5 lg:mt-6'>
                 <div class='flex justify-start space-x-4'>
-                    <!-- Instagram -->
                     <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'instagram')->first()->label }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -26,7 +23,6 @@
                             <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
                         </svg>
                     </a>
-                    <!-- Facebook -->
                     <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'facebook')->first()->label }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -77,16 +73,12 @@
             </ul>
         </div>
 
-        <!-- Block 4 -->
         <div class='sm:order-2 lg:order-none lg:col-span-3 lg:mx-auto '>
             <h6 class='relative text-xl font-bold tracking-wide text-purple-900'>
                 <span class='relative z-20'>Nous contacter</span>
                 <span class='absolute left-0 z-10 w-12 h-1 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 -bottom-1'></span>
             </h6>
-
-            <!-- Contact information -->
             <ul class='flex flex-col mt-6 space-y-5'>
-
                 <li class="flex flex-shrink max-w-xs">
                     <div>
                         <span class="flex items-center justify-center bg-yellow-400 rounded-2xl w-11 h-11">
@@ -106,7 +98,6 @@
                         </p>
                     </div>
                 </li>
-
                 <li class="flex flex-shrink-0">
                     <div>
                         <span class="flex items-center justify-center bg-purple-200 rounded-2xl w-11 h-11">
@@ -127,7 +118,6 @@
                         </p>
                     </div>
                 </li>
-
                 <li class="flex flex-shrink-0">
                     <div>
                         <span class="flex items-center justify-center rounded-2xl w-11 h-11 bg-rose-200">
@@ -148,7 +138,6 @@
                 </li>
             </ul>
         </div>
-
     </div>
 
     <div class='flex flex-col justify-between max-w-md py-8 mx-auto sm:flex-row sm:max-w-none lg:max-w-screen-2xl'>

@@ -1,17 +1,14 @@
 <div class='hidden px-4 lg:block sm:px-6'>
 
-    <!-- Container -->
-    <div class='relative max-w-screen-xl py-5 mx-auto border-b border-purple-200/30'>
+    <div class='relative max-w-screen-xl py-4 mx-auto border-b border-purple-200/30'>
         <div class='flex items-center justify-between'>
 
-            <!-- Site branding -->
             <div class="flex-grow-0 flex-shrink-0 w-60">
                 <a href="{{ route('homepage') }}">
                     <img src="images/logo-mda.png" alt="Bright" class="h-auto" />
                 </a>
             </div>
 
-            <!-- Contact information -->
             <ul class='flex ml-8 lg:space-x-6 xl:space-x-16'>
                 <li class="flex flex-shrink max-w-xs">
                     <div>

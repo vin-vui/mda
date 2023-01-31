@@ -21,7 +21,7 @@ class Seminars extends Component
 
     public function render()
     {
-        $seminars = Seminar::all();
+        $seminars = Seminar::latest('date')->get();
 
         return view('admin.seminars', compact('seminars'))->layout('layouts.app');
     }
@@ -84,13 +84,11 @@ class Seminars extends Component
         } else {
             toast()->success('Actu/Atelier modifié !')->push();
         }
-        
+
         Seminar::updateOrCreate(['id' => $this->seminar_id], $dataValid);
 
         $this->resetInputFields();
         $this->closeModal();
-
-
     }
 
     public function edit($id)
@@ -120,5 +118,10 @@ class Seminars extends Component
         $this->closeModal();
 
         toast()->success('Actu/Atelier supprimé')->push();
+    }
+
+    public function changeDisplay()
+    {
+        $this->display = !$this->display;
     }
 }
