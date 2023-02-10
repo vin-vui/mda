@@ -14,11 +14,9 @@
             <p class='whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'US')->first()->description }}</p>
         </div>
         <div class='grid grid-flow-row-dense grid-cols-2 gap-2 sm:grid-cols-3 mt-14 sm:mt-16 lg:mt-24 sm:gap-3 md:gap-4 lg:gap-6'>
-            <img class='object-cover w-full rounded-2xl lg:h-80 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_1) }}" alt="School grid 01" />
-            <img class='object-cover w-full col-span-2 rounded-2xl lg:h-80 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_2) }}" alt="School grid 02" />
-            <img class='object-cover w-full rounded-2xl lg:h-80 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_3) }}" alt="School grid 03" />
-            <img class='object-cover w-full rounded-2xl lg:h-80 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_4) }}" alt="School grid 04" />
-            <img class='object-cover w-full rounded-2xl lg:h-80 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_5) }}" alt="School grid 05" />
+            <img class='object-cover w-full col-span-3 rounded-2xl md:h-30vw h-40vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_1) }}" alt="Qui sommes-nous ? Image 1" />
+            <img class='object-cover w-full rounded-2xl md:h-56 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_2) }}" alt="Qui sommes-nous ? Image 2" />
+            <img class='object-cover w-full col-span-2 rounded-2xl md:h-56 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_3) }}" alt="Qui sommes-nous ? Image 3" />
         </div>
     </div>
 </section>

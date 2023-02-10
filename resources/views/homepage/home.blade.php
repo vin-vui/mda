@@ -20,9 +20,9 @@
 
             <p class='max-w-2xl mt-6 text-xl leading-loose text-center text-purple-800 lg:text-left whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'HOME')->first()->description }}</p>
 
-            <div class='flex flex-col items-center mt-8 overflow-hidden sm:flex-row'>
-                <a href='#actualites' class="text-lg font-semibold text-purple-900 bg-yellow-500 btn hover:bg-yellow-600 group">
-                    Actualités et Ateliers
+            <div class='flex flex-col items-center mt-8 overflow-hidden sm:flex-row -rotate-2'>
+                <a href='#ateliers' class="text-lg font-semibold text-purple-900 bg-yellow-500 btn hover:bg-yellow-600 group">
+                    Voir les prochains ateliers
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <line x1="5" y1="12" x2="19" y2="12" />

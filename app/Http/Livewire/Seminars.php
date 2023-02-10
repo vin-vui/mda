@@ -15,13 +15,13 @@ class Seminars extends Component
     use WireToast;
     use WithFileUploads;
 
-    public $date, $image, $title, $description, $display, $type, $seminar_id;
+    public $date, $image, $title, $description, $display, $tag, $seminar_id;
     public $confirming;
     public $isOpen = false;
 
     public function render()
     {
-        $seminars = Seminar::latest('date')->get();
+        $seminars = Seminar::latest()->get();
 
         return view('admin.seminars', compact('seminars'))->layout('layouts.app');
     }
@@ -49,8 +49,8 @@ class Seminars extends Component
         $this->image = '';
         $this->title = '';
         $this->description = '';
-        $this->display = '';
-        $this->type = '';
+        $this->display = false;
+        $this->tag = '';
     }
 
     public function store()
@@ -62,8 +62,8 @@ class Seminars extends Component
             'image' => 'nullable',
             'title' => 'required',
             'description' => 'required',
-            'display' => 'required',
-            'type' => 'required',
+            'display' => 'nullable',
+            'tag' => 'required',
         ]);
 
         if ($this->seminar_id != '') {
@@ -101,7 +101,7 @@ class Seminars extends Component
         $this->title = $seminar->title;
         $this->description = $seminar->description;
         $this->display = $seminar->display;
-        $this->type = $seminar->type;
+        $this->tag = $seminar->tag;
 
         $this->openModal();
     }

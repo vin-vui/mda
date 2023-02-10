@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Partners;
 use App\Http\Livewire\Links;
 use App\Http\Livewire\Seminars;
+use App\Http\Livewire\Announcements;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('dashboard', function () { return view('dashboard'); })->name('dashboard');
     Route::get('partenaires', Partners::class)->name('partners');
     Route::get('liens-utiles', Links::class)->name('links');
-    Route::get('actus-ateliers', Seminars::class)->name('seminars');
+    Route::get('ateliers', Seminars::class)->name('seminars');
+    Route::get('annonces', Announcements::class)->name('announcements');
 
     Route::get('accueil', function () { return view('admin.sections.home'); })->name('section.home');
+    Route::get('nos-missions', function () { return view('admin.sections.missions'); })->name('section.missions');
     Route::get('nos-publics', function () { return view('admin.sections.publics'); })->name('section.publics');
     Route::get('resado', function () { return view('admin.sections.resado'); })->name('section.resado');
     Route::get('qui-sommes-nous', function () { return view('admin.sections.us'); })->name('section.us');

@@ -1,14 +1,14 @@
-<section id="nos-publics" class='px-4 pt-12 pb-12 overflow-hidden sm:pb-28 md:pb-0 sm:pt-24 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
+<section id="pour-qui" class='px-4 pt-12 pb-12 overflow-hidden sm:pb-28 md:pb-0 sm:pt-24 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
 
     <div class='max-w-xl mx-auto md:max-w-screen-xl'>
         <div class='md:grid md:grid-cols-2 md:gap-12 lg:gap-16'>
             <div>
                 <h2 class='max-w-3xl mx-auto mt-6 text-purple-900 h2'>
                     <span class="relative block">
-                        Nos
+                        Pour
                         <span class='relative'>
                             <img class='absolute inset-0 transform translate-y-8 sm:translate-y-11 xl:translate-y-12' src='images/underline-simple-light-purple.svg'>
-                            <span class='relative'> Publics</span>
+                            <span class='relative'> Qui ?</span>
                         </span>
                     </span>
                 </h2>
@@ -77,13 +77,14 @@
             </div>
         </div>
 
-        <div @keydown.window.escape="modalOpen = false" x-show="modalOpen" class="relative z-10" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true" x-cloak>
+        <div @keydown.window.escape="modalOpen = false" x-show="modalOpen" class="relative z-50" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true" x-cloak>
             <div x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" x-cloak></div>
             <div class="fixed inset-0 z-10 overflow-y-auto">
                 <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                     <div class="relative transform overflow-hidden rounded-3xl bg-white pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-7xl sm:p-6" @click.away="modalOpen = false" x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state.">
                         <button @click="modalOpen = false" class="flex justify-end w-full px-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 2048 2048"><path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90l-690 691z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 2048 2048">
+                                <path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90l-690 691z" /></svg>
                         </button>
                         @include('homepage.values')
                     </div>

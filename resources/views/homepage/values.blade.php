@@ -64,12 +64,6 @@
                 </div>
             </div>
 
-            <div class='w-full max-w-xl mx-auto my-auto lg:max-w-none mt-8 sm:mt-0'>
-                <div class='aspect-w-3 aspect-h-4'>
-                    <img class='object-cover w-full h-full rounded-3xl' src='https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='doctor image'>
-                </div>
-            </div>
-
             <button @click="modalOpen = false" class="flex justify-center w-full px-4 border rounded-3xl mt-4 py-2">
                 fermer
             </button>

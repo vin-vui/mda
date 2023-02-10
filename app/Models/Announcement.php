@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Seminar extends Model
+class Announcement extends Model
 {
     use HasFactory;
 
@@ -15,11 +15,8 @@ class Seminar extends Model
      * @var array
      */
     protected $fillable = [
-        'date',
-        'image',
         'title',
         'description',
         'display',
-        'tag',
     ];
 }

@@ -49,6 +49,9 @@ class Sections extends Component
                 $this->has_image = false;
                 $this->rows = 3;
                 break;
+            case 'MISSIONS':
+                $this->has_image = false;
+                break;
             case 'RESADO':
                 $this->has_image = false;
                 break;

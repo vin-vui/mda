@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('seminars', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->string('date')->nullable();
-            $table->string('image')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->boolean('display')->default(false)->nullable();
-            $table->enum('tag', ['atelier ados', 'atelier parents', 'atelier ados/parents'])->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seminars');
+        Schema::dropIfExists('announcements');
     }
 };

@@ -17,6 +17,9 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('announcements') }}" :active="request()->routeIs('announcements')">
+                        Annonces
+                    </x-jet-nav-link>
 
                     <div class="sm:flex sm:items-center">
                         <x-jet-dropdown align="right" >
@@ -34,8 +37,11 @@
                                 <x-jet-dropdown-link href="{{ route('section.home') }}">
                                     Accueil
                                 </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('section.missions') }}">
+                                    Nos Missions
+                                </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('section.publics') }}">
-                                    Nos Publics
+                                    Pour Qui ?
                                 </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('seminars') }}">
                                     Actualités et Ateliers
