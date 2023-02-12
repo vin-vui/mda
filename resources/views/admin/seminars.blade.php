@@ -3,18 +3,16 @@
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-6">
                 <h2 class="font-semibold text-xl text-purple-800 leading-tight">
-                    Actualités et Ateliers
+                    Ateliers
                 </h2>
                 <div class="">
                     <button wire:click="create" tag="button" class="inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                        Ajouter une Actu/Atelier
+                        Ajouter un Atelier
                     </button>
                 </div>
             </div>
         </div>
     </header>
-
-    @livewire('sections', ['section_name' => 'SEMINARS'])
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl flex flex-col sm:flex-row flex-wrap items-center sm:my-12 my-6 py-8 px-6 gap-4">
