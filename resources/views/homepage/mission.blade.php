@@ -31,22 +31,22 @@
             <div class='grid w-full mx-auto gap-4 lg:col-span-1 xl:col-span-5 lg:mt-20 grid-cols-2 lg:order-1 sm:max-w-none sm:mx-0'>
                 <div class='lg:-translate-y-20'>
                     <div class='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3'>
-                        <img class='object-cover shadow-md rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_1) }}' alt='About team 1'>
+                        <img class='object-cover rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_1) }}' alt='About team 1'>
                     </div>
                 </div>
                 <div>
                     <div class='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3'>
-                        <img class='object-cover shadow-md rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_2) }}' alt='About team 2'>
+                        <img class='object-cover rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_2) }}' alt='About team 2'>
                     </div>
                 </div>
                 <div class='lg:-translate-y-20'>
                     <div class='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3'>
-                        <img class='object-cover shadow-md rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_3) }}' alt='About team 3'>
+                        <img class='object-cover rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_3) }}' alt='About team 3'>
                     </div>
                 </div>
                 <div>
                     <div class='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3'>
-                        <img class='object-cover shadow-md rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_4) }}' alt='About team 4'>
+                        <img class='object-cover rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'MISSIONS')->first()->image_4) }}' alt='About team 4'>
                     </div>
                 </div>
             </div>

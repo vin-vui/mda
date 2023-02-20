@@ -27,7 +27,7 @@
 </head>
 <body>
 
-    @if(request()->routeIs('homepage'))
+    @if(request()->routeIs('homepage') || request()->routeIs('seminars.list'))
     <header class="bg-purple-50">
         @include('homepage.contact-header')
         @include('homepage.navigation')
@@ -36,5 +36,6 @@
 
     {{ $slot }}
 
+    @livewireScripts
 </body>
 </html>

@@ -1,9 +1,11 @@
 <div class='px-4 sm:px-6'>
 
     <nav class='flex items-center max-w-screen-xl pt-0 sm:pt-5 mx-auto'>
-        <div class='flex items-center  justify-between w-full'>
+        <div class='flex items-center justify-between w-full'>
 
             <div class='items-center justify-between lg:flex-wrap w-full hidden lg:flex gap-2'>
+
+                @if(request()->routeIs('homepage'))
                 <a href="#accueil">
                     <div class="relative p-0.5 group whitespace-nowrap">
                         <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Accueil</span>
@@ -52,6 +54,23 @@
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
+                @else
+                <a href="{{ route('homepage') }}">
+                    <div class="relative p-0.5 group whitespace-nowrap">
+                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 rotate-180" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <line x1="15" y1="16" x2="19" y2="12" />
+                                <line x1="15" y1="8" x2="19" y2="12" />
+                            </svg>
+                            Retour à l'accueil
+                        </span>
+                        <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
+                    </div>
+                </a>
+                @endif
+
                 <div class='flex space-x-4'>
                     <a class="flex items-center justify-center w-10 h-10 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'instagram')->first()->label }}" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -88,6 +107,8 @@
                 <div class='fixed top-0 left-0 z-40 w-screen px-4 py-16 overflow-y-scroll bg-gradient-to-tr from-purple-600 to-purple-600 sm:px-8' @keydown.escape.window="open = false" x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-full" style="display: none;">
                     <div class='flex flex-col items-center justify-center w-full h-full'>
                         <div class='flex flex-col items-center w-full mx-auto space-y-6 justify-evenly'>
+
+                            @if(request()->routeIs('homepage'))
                             <a href="#bienvenue" @click="open = !open">
                                 <div class="relative p-0.5 group">
                                     <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">Accueil</span>
@@ -139,6 +160,23 @@
                                     <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                                 </div>
                             </a>
+                            @else
+                            <a href="{{ route('homepage') }}">
+                                <div class="relative p-0.5 group">
+                                    <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 rotate-180" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <line x1="15" y1="16" x2="19" y2="12" />
+                                            <line x1="15" y1="8" x2="19" y2="12" />
+                                        </svg>
+                                        Retour à l'accueil
+                                    </span>
+                                    <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
+                                </div>
+                            </a>
+                            @endif
+
                             <div class='flex space-x-4'>
                                 <a class="flex items-center justify-center w-16 h-16 text-white duration-300 ease-in-out bg-purple-500 rounded-full hover:bg-purple-600" href="{{ App\Models\Information::where('title', 'instagram')->first()->label }}" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
