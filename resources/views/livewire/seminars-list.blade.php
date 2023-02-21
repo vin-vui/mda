@@ -1,5 +1,5 @@
-<div class='relative w-full sm:pb-64 sm:py-16 pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-purple-50'>
-    <div class='max-w-2xl mx-auto lg:max-w-screen-2xl'>
+<div class='relative w-full sm:pt-16 pt-8 px-4 sm:px-6 lg:px-8 bg-purple-50'>
+    <div class='max-w-2xl mx-auto lg:max-w-screen-2xl pb-24'>
         <div>
             <h2 class='lg:text-center max-w-3xl mx-auto mt-6 text-purple-900 h2'>
                 <span class="relative block">
@@ -11,7 +11,7 @@
                 </span>
             </h2>
             <p class='max-w-2xl mx-auto mt-3 text-xl leading-relaxed text-purple-800 lg:mt-4 lg:text-center whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'SEMINARS')->first()->description }}</p>
-            <div class="flex items-center justify-around mt-12">
+            <div class="flex items-center justify-around mt-24">
                 <div class="capitalize items-center text-2xl text-yellow-700 leading-6 align-top flex justify-center">
                     Filtrer les ateliers
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-3" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -66,4 +66,7 @@
             @endforeach
         </div>
     </div>
+
+    @include('homepage.footer')
+
 </div>

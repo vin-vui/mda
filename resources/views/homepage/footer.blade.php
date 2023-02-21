@@ -56,7 +56,7 @@
             </h6>
             <ul class='mt-6 text-lg divide-y divide-purple-400/20'>
                 <li class='pb-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a href='index.html'>
+                    <a href="{{ route('homepage') }}">
                         Accueil
                     </a>
                 </li>
@@ -106,7 +106,6 @@
                                 <rect x="3" y="5" width="18" height="14" rx="2" />
                                 <polyline points="3 7 12 13 21 7" />
                             </svg>
-
                         </span>
                     </div>
                     <div class="flex-1 ml-3 xl:ml-4">
