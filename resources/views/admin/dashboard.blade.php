@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <header class="bg-white shadow sticky top-16 -mt-1">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-6">
@@ -8,7 +8,6 @@
             </div>
         </div>
     </header>
-    {{-- 'atelier ados', 'atelier parents', 'atelier ados/parents' --}}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="mx-auto flex items-center">
@@ -64,5 +63,33 @@
                 </div>
             </div>
         </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-12">
+            <div class="bg-white shadow-md rounded-3xl">
+                <div class="px-4 py-5 bg-yellow-100 sm:px-6 lg:px-8 rounded-t-3xl mb-4">
+                    <h3 class="text-lg font-medium leading-6 text-purple-900">
+                        Informations
+                    </h3>
+                </div>
+                <div class="grid grid-cols-2">
+                    @foreach ($informations as $index => $information)
+                    <div class="w-full sm:px-6 lg:px-8" wire:key="information-field-{{ $information->id }}">
+                        <div class="flex flex-col">
+                            <div class="mb-4 ">
+                                <x-jet-label for="{{ $information->title }}" value="{{ $information->title }}" />
+                                <x-jet-input id="{{ $information->title }}" class="block mt-1 w-full" type="text" name="label" wire:model="informations.{{ $index }}.label" required />
+                                @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <div class="text-green-500 self-start flex items-center sm:px-6 lg:px-8 mb-4 mt-2">
+                        <svg class="h-5 w-5 mr-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 28 28">
+                            <path fill="currentColor" d="M8 3H6.25A3.25 3.25 0 0 0 3 6.25v15.5a3.25 3.25 0 0 0 3 3.24v-8.74A2.25 2.25 0 0 1 8.25 14h11.5A2.25 2.25 0 0 1 22 16.25v8.74a3.25 3.25 0 0 0 3-3.24V8.786a3.25 3.25 0 0 0-.952-2.299l-2.535-2.535A3.25 3.25 0 0 0 19.214 3H19v5.75A2.25 2.25 0 0 1 16.75 11h-6.5A2.25 2.25 0 0 1 8 8.75V3Zm9.5 0h-8v5.75c0 .414.336.75.75.75h6.5a.75.75 0 0 0 .75-.75V3Zm3 22v-8.75a.75.75 0 0 0-.75-.75H8.25a.75.75 0 0 0-.75.75V25h13Z" />
+                        </svg>
+                        Dernière sauvegarde le {{ Carbon\Carbon::parse($this->update_time)->format('d/m à H:i:s') }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</x-app-layout>
+</div>

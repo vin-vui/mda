@@ -7,6 +7,7 @@ use App\Http\Livewire\Links;
 use App\Http\Livewire\Seminars;
 use App\Http\Livewire\SeminarsList;
 use App\Http\Livewire\Announcements;
+use App\Http\Livewire\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () { return view('homepage._index'); })->name('homepage
 Route::get('tous-les-ateliers', SeminarsList::class)->name('seminars.list');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('dashboard', function () { return view('dashboard'); })->name('dashboard');
+    Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('partenaires', Partners::class)->name('partners');
     Route::get('liens-utiles', Links::class)->name('links');
     Route::get('ateliers', Seminars::class)->name('seminars');
