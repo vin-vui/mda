@@ -44,7 +44,7 @@
             <div class="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
                 <div class="px-4 py-5 bg-yellow-100 sm:px-6">
-                    <h3 class="text-lg font-medium leading-6 text-purple-900">
+                    <h3 class="text-xl font-semibold text-purple-900">
                         @if ($this->partner_id == '')
                         Ajouter un partenaire
                         @else
@@ -58,9 +58,9 @@
                         <div class="">
                             <x-jet-label value="Image" />
                             @if (!is_string($this->url) && $this->url != null)
-                            <img src="{{ $this->url->temporaryUrl() }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                            <img src="{{ $this->url->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-contain rounded-3xl border-2 border-purple-50">
                             @else
-                            <img src="{{ Storage::disk('uploads')->url($this->url) }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                            <img src="{{ Storage::disk('uploads')->url($this->url) }}" alt="" class="mt-2 h-72 w-full object-contain rounded-3xl border-2 border-purple-50">
                             @endif
                         </div>
                         <div x-data="{photoName: null, photoPreview: null}">
@@ -101,7 +101,7 @@
                         @if($this->partner_id != '')
                         @if($confirming === $this->partner_id)
                         <button wire:click="delete({{ $this->partner_id }})" class="text-red-600">
-                            Etes-vous sûr ?
+                            Etes-vous sûr·e ?
                         </button>
                         @else
                         <button wire:click="confirmDelete({{ $this->partner_id }})" class="text-red-600">

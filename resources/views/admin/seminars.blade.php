@@ -35,7 +35,17 @@
                         </td>
                         <td class="px-4 whitespace-nowrap text-center py-4 text-sm font-medium text-gray-900">{{ $seminar->date }}</td>
                         <td class="px-4 whitespace-nowrap text-center py-4 text-sm font-medium text-gray-900">
-                            <span class="bg-yellow-200 text-purple-900 py-1 px-2 rounded-xl">{{ $seminar->tag }}</span>
+                            @switch($seminar->tag)
+                            @case('atelier ados')
+                            <span class="bg-yellow-400 text-purple-900 py-1 px-2 rounded-xl">{{ $seminar->tag }}</span>
+                            @break
+                            @case('atelier parents')
+                            <span class="bg-blue-200 text-purple-900 py-1 px-2 rounded-xl">{{ $seminar->tag }}</span>
+                            @break
+                            @case('atelier ados/parents')
+                            <span class="bg-teal-200 text-purple-900 py-1 px-2 rounded-xl">{{ $seminar->tag }}</span>
+                            @break
+                            @endswitch
                         </td>
                         <td class="px-4 py-4 text-sm font-medium text-gray-900">{{ $seminar->title }}</td>
                         <td class="px-4 py-4 text-sm font-medium text-gray-900">{{ $seminar->description }}</td>
@@ -66,7 +76,7 @@
             <div class="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
                 <div class="px-4 py-5 bg-yellow-100 sm:px-6">
-                    <h3 class="text-lg font-medium leading-6 text-purple-900">
+                    <h3 class="text-xl font-semibold text-purple-900">
                         @if ($this->seminar_id == '')
                         Ajouter une Actu/Atelier
                         @else
@@ -79,9 +89,9 @@
                     <div class="">
                         <x-jet-label value="Image" />
                         @if (!is_string($this->image) && $this->image != null)
-                        <img src="{{ $this->image->temporaryUrl() }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                        <img src="{{ $this->image->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                         @else
-                        <img src="{{ Storage::disk('uploads')->url($this->image) }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                        <img src="{{ Storage::disk('uploads')->url($this->image) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                         @endif
                     </div>
                     <div x-data="{photoName: null, photoPreview: null}">
@@ -157,7 +167,7 @@
                         @if($this->seminar_id != '')
                         @if($confirming === $this->seminar_id)
                         <button wire:click="delete({{ $this->seminar_id }})" class="text-red-600">
-                            Etes-vous sûr ?
+                            Etes-vous sûr·e ?
                         </button>
                         @else
                         <button wire:click="confirmDelete({{ $this->seminar_id }})" class="text-red-600">

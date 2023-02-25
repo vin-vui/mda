@@ -1,9 +1,9 @@
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
     <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl sm:my-12 my-6 pb-8">
-        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold">{{ $this->label }}</div>
+        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold text-purple-900">{{ $this->label }}</div>
         <div class="flex flex-col sm:flex-row gap-4 items-start px-6 mt-4">
-            <div class="@if($this->has_image) basis-1/2 @else w-full @endif flex flex-col">
+            <div class="@if($this->has_image) basis-1/2 @endif w-full flex flex-col">
                 <div class="">
                     <textarea rows="{{ $this->rows }}" id="description" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model="description"></textarea>
                     @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -16,12 +16,12 @@
                 </div>
             </div>
             @if($this->has_image)
-            <div class="basis-1/2">
+            <div class="basis-1/2 w-full">
                 <div class="">
                     @if (!is_string($this->image_1) && $this->image_1 != null)
-                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 h-64 rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -56,15 +56,15 @@
 
     @if ($this->section_name == 'MISSIONS')
     <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl sm:my-12 my-6 pb-8">
-        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold">Visuels</div>
+        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold text-purple-900"">Visuels</div>
         <div class="flex px-6 mt-4 gap-4">
             <div class="basis-1/2">
                 <div class="">
                     <x-jet-label value="Image 1" />
                     @if (!is_string($this->image_1) && $this->image_1 != null)
-                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -97,9 +97,9 @@
                 <div class="">
                     <x-jet-label value="Image 2" />
                     @if (!is_string($this->image_2) && $this->image_2 != null)
-                    <img src="{{ $this->image_2->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_2->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_2) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -134,9 +134,9 @@
                 <div class="">
                     <x-jet-label value="Image 3" />
                     @if (!is_string($this->image_3) && $this->image_3 != null)
-                    <img src="{{ $this->image_3->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_3->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_3) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -169,9 +169,9 @@
                 <div class="">
                     <x-jet-label value="Image 4" />
                     @if (!is_string($this->image_4) && $this->image_4 != null)
-                    <img src="{{ $this->image_4->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_4->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_4) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_4) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -206,7 +206,7 @@
 
     @if ($this->section_name == 'US')
     <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl sm:my-12 my-6 pb-8">
-        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold">Visuels</div>
+        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold text-purple-900"">Visuels</div>
         <div class="flex px-6 mt-4 gap-4">
             <div class="w-full">
                 <div class="">
@@ -249,9 +249,9 @@
                 <div class="">
                     <x-jet-label value="Image 2" />
                     @if (!is_string($this->image_2) && $this->image_2 != null)
-                    <img src="{{ $this->image_2->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_2->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_2) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -284,9 +284,9 @@
                 <div class="">
                     <x-jet-label value="Image 3" />
                     @if (!is_string($this->image_3) && $this->image_3 != null)
-                    <img src="{{ $this->image_3->temporaryUrl() }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_3->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_3) }}" alt="" class="mt-2 h-64 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">

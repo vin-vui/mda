@@ -56,7 +56,7 @@
             <div class="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
                 <div class="px-4 py-5 bg-yellow-100 sm:px-6">
-                    <h3 class="text-lg font-medium leading-6 text-purple-900">
+                    <h3 class="text-xl font-semibold text-purple-900">
                         @if ($this->announcement_id == '')
                         Ajouter une Annonce
                         @else
@@ -100,7 +100,7 @@
                         @if($this->announcement_id != '')
                         @if($confirming === $this->announcement_id)
                         <button wire:click="delete({{ $this->announcement_id }})" class="text-red-600">
-                            Etes-vous sûr ?
+                            Etes-vous sûr·e ?
                         </button>
                         @else
                         <button wire:click="confirmDelete({{ $this->announcement_id }})" class="text-red-600">

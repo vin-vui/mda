@@ -31,7 +31,7 @@
             break;
             }
             @endphp
-            <div class='grid w-full {{ $bg_color }} rounded-2xl sm:grid-cols-12 sm:mb-0 mb-8'>
+            <div class='grid w-full {{ $bg_color }} rounded-2xl sm:grid-cols-12 xl:mb-0 mb-8'>
                 <div class='@if($loop->even) order-1 sm:order-2 sm:rounded-r-2xl sm:rounded-tl-none @else sm:rounded-l-2xl sm:rounded-tr-none @endif rounded-t-2xl h-48 bg-cover bg-center bg-no-repeat sm:h-full sm:col-span-4' style="background-image: url('{{ Storage::disk('uploads')->url($seminar->image) }}');">
                 </div>
                 <div class='@if($loop->even) order-2 sm:order-1 @endif flex flex-col justify-start h-full px-6 py-8 sm:col-span-8 sm:py-10 sm:px-8 lg:px-6 xl:px-8'>

@@ -50,7 +50,7 @@
             <div class="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
                 <div class="px-4 py-5 bg-yellow-100 sm:px-6">
-                    <h3 class="text-lg font-medium leading-6 text-purple-900">
+                    <h3 class="text-xl font-semibold text-purple-900">
                         @if ($this->link_id == '')
                         Ajouter un lien
                         @else
@@ -77,7 +77,7 @@
                         @if($this->link_id != '')
                         @if($confirming === $this->link_id)
                         <button wire:click="delete({{ $this->link_id }})" class="text-red-600">
-                            Etes-vous sûr ?
+                            Etes-vous sûr·e ?
                         </button>
                         @else
                         <button wire:click="confirmDelete({{ $this->link_id }})" class="text-red-600">
