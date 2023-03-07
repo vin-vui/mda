@@ -27,7 +27,7 @@
 <body>
 
     @if(request()->routeIs('homepage') || request()->routeIs('seminars.list'))
-    <header class="bg-purple-50">
+    <header class="bg-purple-50 sticky -top-28 pb-4 z-50">
         @include('homepage.contact-header')
         @include('homepage.navigation')
     </header>
