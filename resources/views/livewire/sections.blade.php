@@ -56,7 +56,7 @@
 
     @if ($this->section_name == 'MISSIONS')
     <div class="bg-white overflow-hidden shadow-md sm:rounded-3xl sm:my-12 my-6 pb-8">
-        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold text-purple-900"">Visuels</div>
+        <div class="bg-yellow-50 px-6 py-6 text-xl font-semibold text-purple-900">Visuels</div>
         <div class="flex px-6 mt-4 gap-4">
             <div class="basis-1/2">
                 <div class="">
@@ -212,9 +212,9 @@
                 <div class="">
                     <x-jet-label value="Image 1" />
                     @if (!is_string($this->image_1) && $this->image_1 != null)
-                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 h-96 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ $this->image_1->temporaryUrl() }}" alt="" class="mt-2 first-line:object-cover h-full rounded-2xl border-2 border-purple-50">
                     @else
-                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 h-96 object-cover w-full rounded-2xl border-2 border-purple-50">
+                    <img src="{{ Storage::disk('uploads')->url($this->image_1) }}" alt="" class="mt-2 object-cover h-full rounded-2xl border-2 border-purple-50">
                     @endif
                 </div>
                 <div x-data="{photoName: null, photoPreview: null}">
@@ -245,7 +245,7 @@
             </div>
         </div>
         <div class="flex px-6 mt-4 gap-4">
-            <div class="basis-1/2">
+            <div class="basis-1/3">
                 <div class="">
                     <x-jet-label value="Image 2" />
                     @if (!is_string($this->image_2) && $this->image_2 != null)
@@ -280,7 +280,7 @@
                     @error('image_2') <span class="text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>
-            <div class="basis-1/2">
+            <div class="basis-2/3">
                 <div class="">
                     <x-jet-label value="Image 3" />
                     @if (!is_string($this->image_3) && $this->image_3 != null)

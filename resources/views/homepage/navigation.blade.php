@@ -8,49 +8,49 @@
                 @if(request()->routeIs('homepage'))
                 <a href="#accueil">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Accueil</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Accueil</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#nos-missions">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Nos Missions</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Nos Missions</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#pour-qui">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Pour Qui ?</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Pour Qui ?</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#ateliers">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Ateliers</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Ateliers</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#resado">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Rés'Ado</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Rés'Ado</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#qui-sommes-nous">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Qui Sommes-Nous ?</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Qui Sommes-Nous ?</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#informations">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Informations Pratiques</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Informations Pratiques</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>
                 <a href="#partenaires">
                     <div class="relative p-0.5 group whitespace-nowrap">
-                        <span class="relative z-10 text-lg font-medium text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Nos Partenaires</span>
+                        <span class="relative z-10 text-lg font-semibold text-purple-700 duration-300 ease-in-out group-hover:text-purple-600">Nos Partenaires</span>
                         <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                     </div>
                 </a>

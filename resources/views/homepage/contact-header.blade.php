@@ -9,7 +9,7 @@
                 </a>
             </div>
 
-            <ul class='flex ml-8 lg:space-x-6 xl:space-x-16'>
+            <ul class='flex mx-8 lg:space-x-8'>
                 <li class="flex flex-shrink max-w-xs">
                     <div>
                         <span class="flex items-center justify-center bg-yellow-400 rounded-2xl w-11 h-11">
@@ -30,7 +30,7 @@
                         </p>
                     </div>
                 </li>
-                <li class="flex flex-shrink-0">
+                <li class="flex flex-shrink max-w-xs">
                     <div>
                         <span class="flex items-center justify-center bg-purple-200 rounded-2xl w-11 h-11">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-700" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -50,7 +50,7 @@
                         </p>
                     </div>
                 </li>
-                <li class="flex flex-shrink-0">
+                <li class="flex flex-shrink max-w-xs">
                     <div>
                         <span class="flex items-center justify-center rounded-2xl w-11 h-11 bg-rose-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-700" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -70,6 +70,12 @@
                     </div>
                 </li>
             </ul>
+
+            <div class="">
+                <a href="https://www.ch-novillars.fr">
+                    <img src="/images/logo-ch-novillars.png" alt="" class="img-responsive h-auto w-16">
+                </a>
+            </div>
 
         </div>
     </div>
