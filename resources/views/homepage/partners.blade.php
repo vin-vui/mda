@@ -1,4 +1,4 @@
-<section id="partenaires" class="sm:mt-52 mt-24 px-4 sm:px-6 lg:px-8">
+<section id="partenaires" class="sm:pt-52 pt-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md mx-auto sm:max-w-none lg:max-w-screen-2xl ">
 
         <h2 class='text-center max-w-3xl mx-auto mt-6 text-purple-900 h2'>

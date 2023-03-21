@@ -1,4 +1,4 @@
-<section id="bienvenue" class='px-4 pt-16 sm:px-6 lg:px-8'>
+<section id="accueil" class='px-4 pt-16 sm:px-6 lg:px-8'>
 
     <div class='max-w-screen-xl mx-auto lg:grid lg:grid-cols-12 lg:gap-8' >
         <div class='flex flex-col items-center justify-center lg:items-start lg:col-span-6'>

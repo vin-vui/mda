@@ -1,4 +1,4 @@
-<footer class='px-4 pt-16 space-y-8 divide-y sm:pt-20 sm:px-6 lg:px-8 divide-purple-400/20'>
+<footer class='px-4 py-16 space-y-8 divide-y sm:py-20 sm:px-6 lg:px-8 divide-purple-400/20'>
     <div class='grid max-w-md mx-auto gap-y-8 sm:gapy-12 sm:gap-x-8 md:gap-x-12 sm:max-w-none lg:max-w-screen-2xl sm:grid-cols-2 lg:grid-cols-11 lg:gap-8 xl:gap-12'>
 
         <div class='flex flex-col lg:mx-auto lg:col-span-4'>
