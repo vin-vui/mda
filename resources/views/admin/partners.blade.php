@@ -22,8 +22,8 @@
                     <img src="{{ Storage::disk('uploads')->url($partner->url) }}" class="mx-auto" alt="">
                 </div>
                 @if($partner->label)
-                <div class="mt-2 text-center">
-                    <span class="bg-yellow-400 text-purple-900 rounded-full py-1 px-3">{{ $partner->label }}</span>
+                <div class="mt-2">
+                    <span class="text-purple-900 py-1">{{ $partner->label }}</span>
                 </div>
                 @endif
             </div>
