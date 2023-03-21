@@ -1,4 +1,4 @@
-<div class='basis-2/3 px-4 py-4 sm:px-6 lg:px-8 rounded-3xl'>
+<div class='basis-2/3 px-6 py-4 lg:px-8 rounded-3xl'>
     <div class='mx-auto'>
         <div class='flex flex-col justify-center'>
             <h3 class='-rotate-1 max-w-xl  text-purple-50 justify-center md:text-2xl text-xl -mt-8 bg-purple-600 rounded-2xl py-3 shadow-md flex items-center'>
@@ -9,6 +9,6 @@
         </div>
     </div>
 </div>
-<div class="basis-1/3 lg:m-10 m-6 pb-6 lg:pb-0">
-    <img class='object-cover h-full rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'VALUES')->first()->image_1) }}' alt='About team 1'>
+<div class="basis-1/3 lg:m-10 m-6 pb-6 lg:pb-0 ">
+    <img class='object-cover md:h-full h-64 w-full rounded-2xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'VALUES')->first()->image_1) }}' alt='Consultations spécialisées'>
 </div>

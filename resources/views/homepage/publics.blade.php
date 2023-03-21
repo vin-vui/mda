@@ -37,7 +37,6 @@
             <div class='relative w-full px-8 py-10 mt-12 bg-yellow-200 sm:p-12 md:mt-0 md:px-8 md:py-10 lg:p-12 md:-translate-y-80 rounded-3xl'>
                 <div class='flex flex-col justify-between'>
                     <div class='flex-1'>
-
                         <h3 class='text-purple-900 h3 mb-2 sm:mb-3'>
                             Adolescents
                         </h3>
