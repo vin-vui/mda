@@ -25,13 +25,14 @@
                 <img src='images/dots-large-strip.svg' class='absolute top-0 origin-top transform -translate-x-1/2 -translate-y-8 left-1/2 lg:hidden sm:scale-100 scale-80' alt=''>
                 <div class="relative w-full mx-auto lg:max-w-lg lg:mr-0 lg:ml-auto">
                     <div class="relative block w-full">
-                        <img class='absolute z-10 hidden w-40 transform lg:block -top-20 -left-20 xl:w-48 xl:-top-20 xl:-left-20' src='images/dots.svg' alt=''>
+                        <img class='absolute  hidden w-40 transform lg:block -top-20 -left-20 xl:w-48 xl:-top-20 xl:-left-20' src='images/dots.svg' alt=''>
                         <figure class='aspect-w-12 aspect-h-10 md:order-1'>
-                            <div class='grid grid-flow-row-dense grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:gap-4 lg:gap-6'>
+                            {{-- <div class='grid grid-flow-row-dense grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:gap-4 lg:gap-6'>
                                 <img class='object-cover h-full col-span-3 rounded-2xl' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_1) }}" alt="Qui sommes-nous ? Image 1" />
                                 <img class='object-cover w-full rounded-2xl md:h-56 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_2) }}" alt="Qui sommes-nous ? Image 2" />
                                 <img class='object-cover w-full col-span-2 rounded-2xl md:h-56 h-30vw' src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_3) }}" alt="Qui sommes-nous ? Image 3" />
-                            </div>
+                            </div> --}}
+                            <img src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'US')->first()->image_1) }}' class='object-contains max-w-full h-auto rounded-3xl' alt='About 03'>
                         </figure>
                     </div>
                 </div>
