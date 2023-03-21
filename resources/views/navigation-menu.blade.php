@@ -43,6 +43,9 @@
                                 <x-jet-dropdown-link href="{{ route('section.missions') }}">
                                     Nos Missions
                                 </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('section.values') }}">
+                                    Consultations spécialisées
+                                </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="{{ route('section.publics') }}">
                                     Pour Qui ?
                                 </x-jet-dropdown-link>

@@ -109,7 +109,7 @@
                         <div class='flex flex-col items-center w-full mx-auto space-y-6 justify-evenly'>
 
                             @if(request()->routeIs('homepage'))
-                            <a href="#bienvenue" @click="open = !open">
+                            <a href="#accueil" @click="open = !open">
                                 <div class="relative p-0.5 group">
                                     <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">Accueil</span>
                                     <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
@@ -127,14 +127,11 @@
                                     <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
                                 </div>
                             </a>
-                            <a href='#ateliers' class="text-lg font-semibold text-purple-900 bg-yellow-500 btn hover:bg-yellow-600 group" @click="open = !open">
-                                Ateliers
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <line x1="15" y1="16" x2="19" y2="12" />
-                                    <line x1="15" y1="8" x2="19" y2="12" />
-                                </svg>
+                            <a href="#ateliers" @click="open = !open">
+                                <div class="relative p-0.5 group">
+                                    <span class="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">Ateliers</span>
+                                    <span class="absolute bottom-0 h-1.5 duration-300 ease-in-out origin-bottom transform scale-x-0 bg-yellow-400 rounded-lg -left-1 -right-1 group-hover:scale-x-100"></span>
+                                </div>
                             </a>
                             <a href="#resado" @click="open = !open">
                                 <div class="relative p-0.5 group">
@@ -201,7 +198,7 @@
     </nav>
 
     <div class="" x-data="{scrollBackTop: false}" x-cloak>
-        <button class="fixed bottom-4 right-4 shadow-md bg-purple-600 px-2 py-1.5 sm:px-4 sm:py-4 rounded-xl text-white z-50 transition-all" x-transition x-show="scrollBackTop" x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false" @click="window.scrollTo({top: 0, behavior: 'smooth'})" x-transition.scale.origin.bottom aria-label="Back to top">
+        <button class="fixed bottom-4 right-4 shadow-md bg-purple-600 px-2 py-2 sm:px-4 sm:py-4 rounded-xl text-white z-50 transition-all" x-transition x-show="scrollBackTop" x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false" @click="window.scrollTo({top: 0, behavior: 'smooth'})" x-transition.scale.origin.bottom aria-label="Back to top">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
             </svg>

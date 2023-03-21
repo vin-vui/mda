@@ -12,7 +12,7 @@
                     </span>
                 </h2>
                 <div class='relative max-w-4xl mt-16 bg-yellow-100 rounded-3xl sm:mt-14'>
-                    <span class="absolute flex items-center justify-center shadow-md left-6 sm:left-10 -top-7 rounded-2xl w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-600">
+                    <span class="absolute flex items-center justify-center shadow-md left-6 sm:left-10 -top-7 rounded-2xl w-14 h-14 bg-purple-600">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-purple-50" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <circle cx="15" cy="15" r="3" />
@@ -50,6 +50,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class='lg:flex relative mt-16 sm:mt-24 rounded-3xl bg-blue-50'>
+            @include('homepage.values')
         </div>
     </div>
 </section>

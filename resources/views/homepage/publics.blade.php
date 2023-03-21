@@ -49,17 +49,6 @@
                             <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_TEEN')->first()->image_1) }}" alt="Public adolescent image" />
                         </div>
                     </div>
-                    <div class='mt-8'>
-                        <button @click="modalOpen = true" class="font-medium text-white bg-purple-600 btn-sm hover:bg-purple-500 group">
-                            Consultations spécialisées
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-3 group-hover:animate-horizontal-bounce" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <line x1="15" y1="16" x2="19" y2="12"></line>
-                                <line x1="15" y1="8" x2="19" y2="12"></line>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </div>
             <div class='relative w-full px-8 py-10 mt-12 sm:p-12 md:mt-0 md:col-start-2 md:px-8 md:py-10 lg:p-12 md:-translate-y-80 bg-blue-50 rounded-3xl'>
@@ -72,21 +61,6 @@
                         <div class='relative mt-8 aspect-w-3 aspect-h-2'>
                             <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_PRO')->first()->image_1) }}" alt="Public pro image" />
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div @keydown.window.escape="modalOpen = false" x-show="modalOpen" class="relative z-50" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true" x-cloak>
-            <div x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" x-cloak></div>
-            <div class="fixed inset-0 z-10 overflow-y-auto">
-                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                    <div class="relative transform overflow-hidden rounded-3xl bg-white pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6" @click.away="modalOpen = false" x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state.">
-                        <button @click="modalOpen = false" class="flex justify-end w-full px-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 2048 2048">
-                                <path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90l-690 691z" /></svg>
-                        </button>
-                        @include('homepage.values')
                     </div>
                 </div>
             </div>

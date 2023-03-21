@@ -1,66 +1,14 @@
-<section class='px-4 lg:-mt-8 bg-white sm:py-4 sm:mt-0 sm:px-6 lg:px-8 lg:rounded-3xl'>
-    <div class='max-w-xl mx-auto'>
+<div class='basis-2/3 px-4 py-4 sm:px-6 lg:px-8 rounded-3xl'>
+    <div class='mx-auto'>
         <div class='flex flex-col justify-center'>
-            <h3 class='text-purple-900 sm:text-center lg:text-left sm:h3 h4'>
+            <h3 class='-rotate-1 max-w-xl  text-purple-50 justify-center md:text-2xl text-xl -mt-8 bg-purple-600 rounded-2xl py-3 shadow-md flex items-center'>
+                <svg class="mr-2 w-5 md:w-8 h-5 md:h-8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15"><path fill="currentColor" d="M5.5 7A2.5 2.5 0 0 1 3 4.5v-2a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v2a3.49 3.49 0 0 0 1.51 2.87A4.41 4.41 0 0 1 5 10.5a3.5 3.5 0 1 0 7 0v-.57a2 2 0 1 0-1 0v.57a2.5 2.5 0 0 1-5 0a4.41 4.41 0 0 1 1.5-3.13A3.49 3.49 0 0 0 9 4.5v-2A1.5 1.5 0 0 0 7.5 1H7a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v2A2.5 2.5 0 0 1 5.5 7m6 2a1 1 0 1 1 0-2a1 1 0 0 1 0 2z"/></svg>
                 Consultations spécialisées
             </h3>
-            <div class='grid max-w-4xl gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-1 sm:mx-auto lg:mx-0 lg:max-w-md'>
-                <div class="flex">
-                    <div class="w-14">
-                        <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
-                    </div>
-                    <div class="w-full">
-                        <h5 class="flex items-center text-xl font-semibold text-purple-900">
-                            Médecins
-                        </h5>
-                        <p class="mt-1 text-base text-purple-800">
-                            Pédopsychiatre/psychiatre, pour avis ou suivis de consultations sur rendez-vous.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="w-14">
-                        <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
-                    </div>
-                    <div class="w-full">
-                        <h5 class="flex items-center text-xl font-semibold text-purple-900">
-                            Pédiatre
-                        </h5>
-                        <p class="mt-1 text-base text-purple-800">
-                            Pour toutes questions relatives à la santé générale de l'adolescent : vacations tous les vendredis après-midi sur rendez-vous.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="w-14">
-                        <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
-                    </div>
-                    <div class="w-full">
-                        <h5 class="flex items-center text-xl font-semibold text-purple-900">
-                            Psychologue de l'Education Nationale
-                        </h5>
-                        <p class="mt-1 text-base text-purple-800">
-                            Pour toutes informations, aides et accompagnement du jeune dans ses orientations scolaires et d'avenir. Il conseille et informe les parents et fait le lien avec l'école : permanence les mercredis après-midi tous les 15 jours sur rendez-vous, détachement de l'Inspection Académique.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="w-14">
-                        <img src='images/checkmark.svg' class='w-7 h-7' alt=''>
-                    </div>
-                    <div class="w-full">
-                        <h5 class="flex items-center text-xl font-semibold text-purple-900">
-                            Avocats du barreau des avocats
-                        </h5>
-                        <p class="mt-1 text-base text-purple-800">
-                            Pour toutes questions, informations juridiques ou éventuelle orientation vers une institution juridique ou chez un avocat spécialisé. Ces consultations s'adressent uniquement aux mineurs et fonctionnent avec la participation à tour de rôle des avocats de l'antenne des mineurs du barreau de Besançon. Elles ont lieu deux lundis par mois de 16h à 18h sur rendez-vous.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <button @click="modalOpen = false" class="flex justify-center w-full px-4 border rounded-3xl mt-4 py-2">
-                fermer
-            </button>
+            <p class="whitespace-pre-wrap py-6 text-lg leading-loose">{{ App\Models\Section::where('title', 'VALUES')->first()->description }}</p>
         </div>
     </div>
-</section>
+</div>
+<div class="basis-1/3 lg:m-10 m-6 pb-6 lg:pb-0">
+    <img class='object-cover h-full rounded-3xl' src='{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'VALUES')->first()->image_1) }}' alt='About team 1'>
+</div>

@@ -1,8 +1,8 @@
 <div class="pb-24">
-    <header class="bg-white shadow sticky top-16 -mt-1">
+    <header class="bg-white shadow sticky top-16 -mt-1 z-20">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-6">
-                <h2 class="font-semibold text-xl text-purple-800 leading-tight">
+                <h2 class="font-semibold text-xl text-purple-800 leading-tight ">
                     Dashboard
                 </h2>
             </div>
@@ -13,31 +13,31 @@
             <div class="mx-auto flex items-center">
                 <div class="flex flex-col justify-between w-full sm:rounded-3xl bg-white pt-5 shadow-md sm:pt-10">
                     <div class="sm:flex justify-between items-center gap-8 px-4 sm:px-6">
-                        <div class="">
+                        <div class="relative z-10">
                             <dt>
-                                <div class="bg-purple-200 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Publiés</div>
+                                <div class="z-10 bg-purple-200 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Publiés</div>
                             </dt>
                             <dd class="flex justify-center items-baseline pb-6 sm:pb-7 mt-4">
                                 <p class="text-2xl font-semibold text-gray-900">{{ App\Models\Seminar::where('display', true)->count() }}</p>
                             </dd>
                         </div>
-                        <div class="">
+                        <div class="relative z-10">
                             <dt>
-                                <div class="bg-yellow-400 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Atelier Ados</div>
+                                <div class="z-10 bg-yellow-400 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Atelier Ados</div>
                             </dt>
                             <dd class="flex justify-center items-baseline pb-6 sm:pb-7 mt-4">
                                 <p class="text-2xl font-semibold text-gray-900">{{ App\Models\Seminar::where('tag', 'atelier ados')->where('display', true)->count() }}</p>
                             </dd>
                         </div>
-                        <div class="">
+                        <div class="relative z-10">
                             <dt>
-                                <div class="bg-blue-200 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Atelier Parents</div>
+                                <div class="z-10 bg-blue-200 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Atelier Parents</div>
                             </dt>
                             <dd class="flex justify-center items-baseline pb-6 sm:pb-7 mt-4">
                                 <p class="text-2xl font-semibold text-gray-900">{{ App\Models\Seminar::where('tag', 'atelier parents')->where('display', true)->count() }}</p>
                             </dd>
                         </div>
-                        <div class="">
+                        <div class="relative z-10">
                             <dt>
                                 <div class="bg-teal-200 capitalize items-center justify-center px-3 py-2 text-xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full">Atelier Ados/Parents</div>
                             </dt>

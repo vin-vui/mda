@@ -32,6 +32,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('accueil', function () { return view('admin.sections.home'); })->name('section.home');
     Route::get('nos-missions', function () { return view('admin.sections.missions'); })->name('section.missions');
+    Route::get('consultations-specialisees', function () { return view('admin.sections.values'); })->name('section.values');
     Route::get('nos-publics', function () { return view('admin.sections.publics'); })->name('section.publics');
     Route::get('ateliers-collectifs', function () { return view('admin.sections.seminars'); })->name('section.seminars');
     Route::get('resado', function () { return view('admin.sections.resado'); })->name('section.resado');
