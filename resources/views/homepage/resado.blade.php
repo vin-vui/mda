@@ -1,6 +1,6 @@
 <section id="resado" class='relative overflow-hidden bg-purple-50'>
-    <div class='absolute inset-y-0 right-0 w-full max-w-screen-xl ml-auto bg-yellow-100 rounded-l-5xl'></div>
-    <div class='relative w-full px-4 py-16 bg-yellow-100 2xl:max-w-screen-xl 2xl:mx-auto 2xl:rounded-l-5xl sm:px-6 lg:pr-0 sm:py-24 lg:py-0'>
+    <div class='absolute inset-y-0 right-0 w-full max-w-screen-xl ml-auto bg-yellow-50 rounded-l-5xl'></div>
+    <div class='relative w-full px-4 py-16 bg-yellow-50 2xl:max-w-screen-xl 2xl:mx-auto 2xl:rounded-l-5xl sm:px-6 lg:pr-0 sm:py-24 lg:py-0'>
         <div class='relative grid gap-12 lg:grid-cols-2 2xl:gap-4 lg:pr-10 2xl:pr-0'>
             <div class='relative grid order-2 w-full max-w-2xl grid-cols-2 gap-3 mx-auto lg:order-1 sm:gap-6 lg:py-32 lg:max-w-none'>
                 <div class='col-span-2 transform aspect-w-3 aspect-h-2 2xl:-translate-x-16'>

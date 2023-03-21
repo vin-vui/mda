@@ -14,8 +14,8 @@
     @include('homepage.news')
 
     @include('homepage.resado')
-
-    @include('homepage.us')
+    @include('homepage.about-blocks')
+    {{-- @include('homepage.us') --}}
 
     <div class='w-full h-40 sm:h-48 xl:h-52 bg-gradient-to-b from-purple-50 to-transparent'></div>
 
