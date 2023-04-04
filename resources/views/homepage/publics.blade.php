@@ -1,4 +1,4 @@
-<section id="pour-qui" class='px-4 pt-12 pb-12 overflow-hidden sm:pb-28 md:pb-0 sm:pt-24 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
+<section id="pour-qui" class='px-4 pt-12 sm:pt-24 pb-12 -mt-12 sm:-mt-24 overflow-hidden sm:pb-28 md:pb-0 sm:px-6 lg:px-8' x-data="{ modalOpen: false }">
 
     <div class='max-w-xl mx-auto md:max-w-screen-xl'>
         <div class='md:grid md:grid-cols-2 md:gap-12 lg:gap-16'>

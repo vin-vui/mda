@@ -5,17 +5,19 @@
         @include('homepage.mission')
     </div>
 
-    <div class='w-full h-40 sm:h-48 xl:h-52 bg-gradient-to-b from-purple-50 to-transparent'></div>
+    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-purple-50 to-transparent'></div>
 
     @include('homepage.publics')
 
-    <div class='w-full h-40 sm:h-48 xl:h-52 bg-gradient-to-b from-transparent to-purple-50'></div>
+    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-transparent to-purple-50'></div>
 
     @include('homepage.news')
 
     @include('homepage.resado')
+
+    <div class='w-full h-20 sm:h-24 xl:h-36 bg-purple-50'></div>
+
     @include('homepage.about-blocks')
-    {{-- @include('homepage.us') --}}
 
     <div class='w-full h-40 sm:h-48 xl:h-52 bg-gradient-to-b from-purple-50 to-transparent'></div>
 

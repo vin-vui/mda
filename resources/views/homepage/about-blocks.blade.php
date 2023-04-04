@@ -1,6 +1,6 @@
-<section id="qui-sommes-nous" class='px-4 pt-4 sm:pt-56 sm:px-6 lg:px-8 bg-purple-50'>
+<section id="qui-sommes-nous" class='px-4 pt-4 sm:pt-32 sm:px-6 lg:px-8 bg-purple-50'>
     <div class='max-w-screen-xl mx-auto'>
-        <div class="grid max-w-xl mx-auto mt-20 lg:max-w-none sm:mt-24 lg:mt-44 lg:grid-cols-12 gap-14 sm:gap-16 lg:gap-8">
+        <div class="grid max-w-xl mx-auto lg:max-w-none lg:grid-cols-12 gap-14 sm:gap-16 lg:gap-8">
             <div class="relative z-10 flex flex-col justify-center order-2 lg:order-1 lg:col-span-6 lg:text-left">
                 <div>
                     <h2 class='max-w-3xl mx-auto text-purple-900 h2'>

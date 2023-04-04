@@ -1,4 +1,4 @@
-<div class='px-4 sm:px-6'>
+<div class='px-4 sm:px-6 '>
 
     <nav class='flex items-center max-w-screen-xl pt-0 sm:pt-5 mx-auto'>
         <div class='flex items-center justify-between w-full'>

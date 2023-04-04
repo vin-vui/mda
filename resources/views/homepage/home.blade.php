@@ -9,11 +9,11 @@
             </div>
 
             <h1 class='max-w-xl mt-4 sm:mt-5 text-center text-purple-900 lg:text-left h1 lg:max-w-none'>
-                <span class="block">La Maison de </span>
+                <span class="block">Maison de l'Adolescent-</span>
                 <span class="relative block">
                   <span class='relative'>
                     <img class='absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14' src='images/underline-simple-light-purple.svg'>
-                    <span class='relative'>l'Adolescent</span>
+                    <span class='relative'>Rés'Ado</span>
                   </span>
                 </span>
             </h1>
