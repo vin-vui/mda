@@ -26,7 +26,7 @@
 </head>
 <body>
 
-    @if(request()->routeIs('homepage') || request()->routeIs('seminars.list'))
+    @if(request()->routeIs('homepage') || request()->routeIs('seminars.list') || request()->routeIs('legals'))
     <header class="bg-purple-50 sticky -top-28 pb-4 z-50 shadow-lg">
         @include('homepage.contact-header')
         @include('homepage.navigation')

@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class='py-2 font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600'>
-                    <a href='about-us.html'>
+                    <a href='{{ route('legals') }}'>
                         Mentions légales
                     </a>
                 </li>

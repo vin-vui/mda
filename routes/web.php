@@ -21,6 +21,7 @@ use App\Http\Livewire\Dashboard;
 */
 
 Route::get('/', function () { return view('homepage._index'); })->name('homepage');
+Route::get('mentions-legales', function () { return view('legals'); })->name('legals');
 Route::get('tous-les-ateliers', SeminarsList::class)->name('seminars.list');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
