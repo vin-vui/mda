@@ -19,7 +19,7 @@
 
     @include('homepage.about-blocks')
 
-    <div class='w-full h-40 sm:h-48 xl:h-52 bg-gradient-to-b from-purple-50 to-transparent'></div>
+    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-purple-50 to-transparent'></div>
 
     @include('homepage.contact-information')
 
