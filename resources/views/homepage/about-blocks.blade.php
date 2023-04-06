@@ -19,8 +19,8 @@
                 </div>
             </div>
             <div class="relative w-full max-w-xl mx-auto order-2 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-                <div class="hidden lg:block">
-                    <img src='images/blob-light-rose.svg' class='absolute inset-0 w-full h-full transform lg:scale-135' alt=''>
+                <div class="hidden lg:block ">
+                    <img src='images/blob-light-rose.svg' class='absolute inset-0 w-full h-full transform lg:scale-135 lg:-translate-x-20' alt=''>
                 </div>
                 <img src='images/dots-large-strip.svg' class='absolute top-0 origin-top transform -translate-x-1/2 -translate-y-8 left-1/2 lg:hidden sm:scale-100 scale-80' alt=''>
                 <div class="relative w-full mx-auto lg:max-w-lg lg:mr-0 lg:ml-auto">
