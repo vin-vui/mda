@@ -13,7 +13,7 @@
             @foreach (App\Models\Partner::all() as $partner)
             <div class="group flex relative">
                 <img src="{{ Storage::disk('uploads')->url($partner->url) }}" class="h-24" alt="{{ $partner->label }}">
-                <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-24 opacity-0 m-4 mx-auto">{{ $partner->label }}</span>
+                <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-24 opacity-0 w-full m-4 mx-auto">{{ $partner->label }}</span>
             </div>
             @endforeach
         </div>
