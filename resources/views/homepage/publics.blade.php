@@ -45,7 +45,7 @@
                         </span>
                         <p class='max-w-2xl mt-3 text-lg leading-loose text-purple-800 whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'PUBLICS_TEEN')->first()->description }}</p>
                         <div class='relative mt-8 aspect-w-3 aspect-h-2'>
-                            <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_TEEN')->first()->image_1) }}" alt="Public adolescent image" />
+                            <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_TEEN')->first()->image_2) }}" alt="Public adolescent image" />
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         </h3>
                         <p class='max-w-2xl mt-3 text-lg leading-loose text-purple-800 whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'PUBLICS_PRO')->first()->description }}</p>
                         <div class='relative mt-8 aspect-w-3 aspect-h-2'>
-                            <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_PRO')->first()->image_1) }}" alt="Public pro image" />
+                            <img class="object-cover rounded-2xl" src="{{ Storage::disk('uploads')->url(App\Models\Section::where('title', 'PUBLICS_PRO')->first()->image_3) }}" alt="Public pro image" />
                         </div>
                     </div>
                 </div>
