@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const fileSize = fileInput.files.item(0).size;
                 const fileMb = fileSize / 1024 ** 2;
                 if (fileMb >= 2) {
-                    fileResult.innerHTML = "Please select a file less than 2MB.";
-                    fileSubmit.disabled = true;
+                    alert('Please select a file less than 2MB');
                 }
             }
             let image = document.getElementById('image_2');
