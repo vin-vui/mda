@@ -50,24 +50,24 @@ class DatabaseSeeder extends Seeder
         //     'password' => Hash::make('password'),
         // ]);
 
-        // DB::table('users')->insert([
-        //     'name' => 'secretariat',
-        //     'email' => 'secretariat.resado@ch-novillars.fr',
-        //     'password' => Hash::make('resado'),
-        // ]);
+        DB::table('users')->insert([
+            'name' => 'secretariat',
+            'email' => 'secretariat.resado@ch-novillars.fr',
+            'password' => Hash::make('resado'),
+        ]);
 
-        // DB::table('sections')->insert(['title' => 'HOME', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'MISSIONS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'VALUES', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'PUBLICS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'PUBLICS_TEEN', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'PUBLICS_FAMILY', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'PUBLICS_PRO', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'SEMINARS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'RESADO', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'US', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'INFORMATIONS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
-        // DB::table('sections')->insert(['title' => 'FOOTER', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'HOME', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'MISSIONS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'VALUES', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'PUBLICS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'PUBLICS_TEEN', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'PUBLICS_FAMILY', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'PUBLICS_PRO', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'SEMINARS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'RESADO', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'US', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'INFORMATIONS', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
+        DB::table('sections')->insert(['title' => 'FOOTER', 'description' => $this->faker->paragraph(), 'image_1' => 'placeholder.jpg', 'image_2' => 'placeholder.jpg', 'image_3' => 'placeholder.jpg', 'image_4' => 'placeholder.jpg', 'image_5' => 'placeholder.jpg', 'image_6' => 'placeholder.jpg']);
 
         // for ($i = 1; $i <= 3; $i++) {
             // DB::table('announcements')->insert([
@@ -77,14 +77,14 @@ class DatabaseSeeder extends Seeder
             // ]);
         // }
 
-        // DB::table('informations')->insert(['title' => 'adresse', 'label' => '13 rue des Jardins - 25000 Besançon']);
-        // DB::table('informations')->insert(['title' => 'email', 'label' => 'secretariat.resado@ch-novillars.fr']);
-        // DB::table('informations')->insert(['title' => 'téléphone', 'label' => '03 81 53 97 67']);
-        // DB::table('informations')->insert(['title' => 'téléphone resado', 'label' => '03 81 53 97 66']);
-        // DB::table('informations')->insert(['title' => 'accès tramway', 'label' => 'Ligne 1 - arrêt Tristan Bernard (6 mn à pied)']);
-        // DB::table('informations')->insert(['title' => 'accès bus', 'label' => 'Ligne 5 - arrêt Mermoz (6 mn à pied)']);
-        // DB::table('informations')->insert(['title' => 'facebook', 'label' => 'https://www.facebook.com/profile.php?id=100054914929152']);
-        // DB::table('informations')->insert(['title' => 'instagram', 'label' => 'https://www.instagram.com/Maison_ado_25/?fbclid=IwAR2Y2mm7b6mNHixQlPg4q7AinEE1vD4ne8Miri86j5K89RTnYlhM3TLJ42U']);
+        DB::table('informations')->insert(['title' => 'adresse', 'label' => '13 rue des Jardins - 25000 Besançon']);
+        DB::table('informations')->insert(['title' => 'email', 'label' => 'secretariat.resado@ch-novillars.fr']);
+        DB::table('informations')->insert(['title' => 'téléphone', 'label' => '03 81 53 97 67']);
+        DB::table('informations')->insert(['title' => 'téléphone resado', 'label' => '03 81 53 97 66']);
+        DB::table('informations')->insert(['title' => 'accès tramway', 'label' => 'Ligne 1 - arrêt Tristan Bernard (6 mn à pied)']);
+        DB::table('informations')->insert(['title' => 'accès bus', 'label' => 'Ligne 5 - arrêt Mermoz (6 mn à pied)']);
+        DB::table('informations')->insert(['title' => 'facebook', 'label' => 'https://www.facebook.com/profile.php?id=100054914929152']);
+        DB::table('informations')->insert(['title' => 'instagram', 'label' => 'https://www.instagram.com/Maison_ado_25/?fbclid=IwAR2Y2mm7b6mNHixQlPg4q7AinEE1vD4ne8Miri86j5K89RTnYlhM3TLJ42U']);
 
         // for ($i = 1; $i <= 9; $i++) {
         //     DB::table('partners')->insert([
