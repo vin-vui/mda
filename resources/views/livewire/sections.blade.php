@@ -22,7 +22,7 @@
                     <img id="{{ $this->target[0] }}" src="{{ ${$target[2]} ? ${$target[2]}->temporaryUrl() : Storage::disk('uploads')->url(${$target[0]}) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="{{ $this->target[1] }}" type="file" class="hidden" wire:model="{{ $target[2] }}" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="{{ $this->target[1] }}" type="file" class="hidden" wire:model="{{ $target[2] }}" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button type="button" x-on:click.prevent="$refs.photo.click()">
@@ -91,7 +91,7 @@
                     <img id="image_1" src="{{ $photo_1 ? $photo_1->temporaryUrl() : Storage::disk('uploads')->url($image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -152,7 +152,7 @@
                     <img id="image_2" src="{{ $photo_2 ? $photo_2->temporaryUrl() : Storage::disk('uploads')->url($image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -215,7 +215,7 @@
                     <img id="image_3" src="{{ $photo_3 ? $photo_3->temporaryUrl() : Storage::disk('uploads')->url($image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -276,7 +276,7 @@
                     <img id="image_4" src="{{ $photo_4 ? $photo_4->temporaryUrl() : Storage::disk('uploads')->url($image_4) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_4" type="file" class="hidden" wire:model="photo_4" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_4" type="file" class="hidden" wire:model="photo_4" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -345,7 +345,7 @@
                     <img id="image_1" src="{{ $photo_1 ? $photo_1->temporaryUrl() : Storage::disk('uploads')->url($image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -408,7 +408,7 @@
                     <img id="image_2" src="{{ $photo_2 ? $photo_2->temporaryUrl() : Storage::disk('uploads')->url($image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
@@ -469,7 +469,7 @@
                     <img id="image_3" src="{{ $photo_3 ? $photo_3->temporaryUrl() : Storage::disk('uploads')->url($image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
-                    <input accept=".jpg, .jpeg, .png" size="20000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
+                    <input accept=".jpg, .jpeg, .png" size="1000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
                             <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
