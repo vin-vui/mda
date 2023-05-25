@@ -150,6 +150,7 @@
                 <div class="">
                     <x-jet-label value="Image 2" />
                     <img id="image_2" src="{{ $photo_2 ? $photo_2->temporaryUrl() : Storage::disk('uploads')->url($image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
+                    <span id="fileResult2"></span>
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
