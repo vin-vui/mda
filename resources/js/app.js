@@ -53,8 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (fileInput2.files.length > 0) {
                     const fileSize = fileInput.files.item(0).size;
                     const fileMb = fileSize / 1024 ** 2;
-                    alert(fileMb);
-                  }
+                    if (fileMb >= 2) {
+                        fileResult.innerHTML = "Please select a file less than 2MB.";
+                        fileSubmit.disabled = true;
+                    }
+                }
                 const croppedCanvas = cropper.getCroppedCanvas();
                 const croppedImageDataUrl = croppedCanvas.toDataURL();
                 Livewire.emit('uploadCroppedImage', 'image_2', croppedImageDataUrl);
