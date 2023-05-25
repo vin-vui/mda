@@ -25,7 +25,7 @@ class Sections extends Component
     public function updatedPhoto()
     {
         $this->validate([
-            'photo' => 'image',
+            'photo' => 'image|max:20480',
         ]);
     }
 
