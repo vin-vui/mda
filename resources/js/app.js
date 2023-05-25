@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             let image = document.getElementById('image_2');
             initializeCropper(image);
             document.getElementById('sendCroppedImage2').addEventListener('click', () => {
+                if (fileInput2.files.length > 0) {
+                    const fileSize = fileInput.files.item(0).size;
+                    const fileMb = fileSize / 1024 ** 2;
+                    alert(fileMb);
+                  }
                 const croppedCanvas = cropper.getCroppedCanvas();
                 const croppedImageDataUrl = croppedCanvas.toDataURL();
                 Livewire.emit('uploadCroppedImage', 'image_2', croppedImageDataUrl);
