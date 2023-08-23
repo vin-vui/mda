@@ -27,42 +27,9 @@
                 <button type="button" wire:click="selectAP" class="{{ $this->search == ['atelier ados/parents'] ? 'bg-teal-200' : 'bg-purple-50' }} select-none transition-all hover:bg-teal-200 capitalize items-center justify-center px-6 py-4 text-3xl -rotate-2 text-purple-700 font-semibold leading-6 align-top rounded-full cursor-pointer">Ateliers Ados/Parents</button>
             </div>
         </div>
-        <div class='mt-12 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 sm:mt-16'>
+        <div class='mt-12 lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-12 sm:mt-16 pl-8'>
             @foreach ($seminars as $seminar)
-            @php
-            switch ($seminar->tag) {
-            case 'atelier ados':
-            $tag_color = 'bg-yellow-400';
-            $bg_color = 'bg-yellow-50';
-            break;
-            case 'atelier parents':
-            $tag_color = 'bg-blue-200';
-            $bg_color = 'bg-blue-50';
-            break;
-            case 'atelier ados/parents':
-            $tag_color = 'bg-teal-200';
-            $bg_color = 'bg-teal-50';
-            break;
-            }
-            @endphp
-            <div class='grid w-full {{ $bg_color }} rounded-3xl sm:grid-cols-12 xl:mb-0 mb-8'>
-                <div class='@if($loop->even) order-1 sm:order-2 sm:rounded-r-3xl sm:rounded-tl-none @else sm:rounded-l-3xl sm:rounded-tr-none @endif rounded-t-3xl h-48 bg-cover bg-center bg-no-repeat sm:h-full sm:col-span-4' style="background-image: url('{{ Storage::disk('uploads')->url($seminar->image) }}');">
-                </div>
-                <div class='@if($loop->even) order-2 sm:order-1 @endif flex flex-col justify-start h-full px-6 py-8 sm:col-span-8 sm:py-10 sm:px-8 lg:px-6 xl:px-8'>
-                    <div class="flex flex-col justify-start items-start">
-                        <div class="inline-flex capitalize items-center justify-center px-3.5 py-0.5 text-xl -rotate-2 {{ $tag_color }} text-purple-700 font-semibold leading-6 align-top rounded-xl">
-                            {{ $seminar->tag }}
-                        </div>
-                        <div class="flex items-center justify-center px-3.5 py-0.5 text-sm -rotate-1  align-top rounded-xl mt-2">
-                            <span class="inline-block px-2 py-1 relative bg-rose-100 text-purple-700 font-medium leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">{{ $seminar->date }}</span>
-                        </div>
-                    </div>
-                    <h4 class='mt-4 text-2xl font-bold text-purple-900 xl:text-3xl lg:text-2xl sm:text-3xl lg:leading-tight xl:leading-tight'>
-                        {{ $seminar->title }}
-                    </h4>
-                    <p class='mt-1 text-purple-800 lg:mt-2 whitespace-pre-wrap'>{{ $seminar->description }}</p>
-                </div>
-            </div>
+            @include('partials.news-card')
             @endforeach
         </div>
     </div>

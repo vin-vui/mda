@@ -1,4 +1,4 @@
-<section id="informations" class='relative w-full px-4 pt-24 bg-white sm:pt-36 sm:px-6 lg:px-8'>
+<section id="informations" class='relative w-full px-4 pt-12 bg-white sm:pt-22 sm:px-6 lg:px-8'>
 
     <div class='max-w-xl mx-auto lg:max-w-screen-2xl'>
 

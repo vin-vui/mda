@@ -5,21 +5,19 @@
         @include('homepage.mission')
     </div>
 
-    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-purple-50 to-transparent'></div>
+    <div class='w-full h-20 bg-gradient-to-b from-purple-50 to-transparent'></div>
 
     @include('homepage.publics')
 
-    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-transparent to-purple-50'></div>
+    <div class='w-full h-16 sm:h-24 xl:h-36 bg-gradient-to-b from-transparent to-purple-50'></div>
 
     @include('homepage.news')
 
     @include('homepage.resado')
 
-    <div class='w-full h-20 sm:h-24 xl:h-36 bg-purple-50'></div>
-
     @include('homepage.about-blocks')
 
-    <div class='w-full h-20 sm:h-24 xl:h-36 bg-gradient-to-b from-purple-50 to-transparent'></div>
+    <div class='w-full h-36 bg-gradient-to-b from-purple-50 to-transparent'></div>
 
     @include('homepage.contact-information')
 
@@ -46,7 +44,7 @@
                     </svg>
                     {{ $announcement->title }}
                 </h3>
-                <p class="text-purple-900 pt-4 whitespace-pre-wrap">{{ $announcement->description }}</p>
+                <p class="text-purple-900 pt-4 whitespace-pre-wrap break-words">@linkify($announcement->description)</p>
             </div>
             @endforeach
         </div>

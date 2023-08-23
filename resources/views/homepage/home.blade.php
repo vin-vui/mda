@@ -4,19 +4,21 @@
         <div class='flex flex-col items-center justify-center lg:items-start lg:col-span-6'>
             <div>
                 <span class="inline-block px-2 py-1 relative bg-purple-200 text-purple-700 font-semibold -rotate-2 leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">
-                    Bienvenue à
+                    Bienvenue à la
                 </span>
             </div>
 
             <h1 class='max-w-xl mt-4 sm:mt-5 text-center text-purple-900 lg:text-left h1 lg:max-w-none'>
-                <span class="block">Maison de l'Adolescent-</span>
+                <span class="block">Maison des Adolescents</span>
                 <span class="relative block">
                   <span class='relative'>
                     <img class='absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14' src='images/underline-simple-light-purple.svg'>
-                    <span class='relative'>Rés'Ado</span>
+                    <span class='relative'>du Doubs</span>
                   </span>
                 </span>
             </h1>
+
+            <h2 class="max-w-xl mt-4 sm:mt-5 text-center text-purple-600 lg:text-left h1 lg:max-w-none -rotate-2">- Résado</h2>
 
             <p class='max-w-2xl mt-6 text-xl leading-loose text-center text-purple-800 lg:text-left whitespace-pre-wrap'>{{ App\Models\Section::where('title', 'HOME')->first()->description }}</p>
 
