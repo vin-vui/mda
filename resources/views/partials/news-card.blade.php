@@ -27,7 +27,7 @@ break;
                         {{ $seminar->tag }}
                     </div>
                     <div class="flex items-center justify-center px-3.5 py-0.5 text-sm -rotate-1  align-top rounded-xl mt-2">
-                        <span class="inline-block whitespace-nowrap px-2 py-1 relative bg-rose-100 text-purple-700 font-medium leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">{{ $seminar->date }}</span>
+                        <span class="inline-block px-2 py-1 relative bg-rose-100 text-purple-700 font-medium leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">{{ $seminar->date }}</span>
                     </div>
                 </div>
             </div>

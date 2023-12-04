@@ -1,4 +1,4 @@
-<div class='relative w-full sm:pt-16 pt-8 px-4 sm:px-6 lg:px-8 bg-purple-50'>
+<div class='overflow-x-hidden relative w-full sm:pt-16 pt-8 px-4 sm:px-6 lg:px-8 bg-purple-50'>
     <div class='max-w-2xl mx-auto lg:max-w-screen-2xl pb-24'>
         <div>
             <h2 class='lg:text-center max-w-3xl mx-auto mt-6 text-purple-900 h2'>
