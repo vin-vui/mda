@@ -24,7 +24,7 @@
     <!-- Scripts -->
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     @if(request()->routeIs('homepage') || request()->routeIs('seminars.list') || request()->routeIs('legals'))
     <header class="bg-white sticky -top-28 pb-4 z-50 lg:shadow-lg">

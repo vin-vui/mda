@@ -21,13 +21,13 @@ break;
                 <div class='h-48 w-48 bg-cover bg-center bg-no-repeat sm:col-span-4 rounded-2xl' style="background-image: url('{{ Storage::disk('uploads')->url($seminar->image) }}');">
                 </div>
             </div>
-            <div class='flex flex-col justify-start h-full px-2 py-8 sm:col-span-8 sm:py-10 sm:px-3 lg:px-2 xl:px-3'>
+            <div class='flex flex-col justify-start h-full -translate-x-4 md:-translate-x-0 py-8 sm:col-span-8 sm:py-10 sm:px-3 lg:px-2 xl:px-3'>
                 <div class="flex flex-col justify-start items-start">
-                    <div class="inline-flex capitalize items-center justify-center px-3.5 py-0.5 text-xl -rotate-2 {{ $tag_color }} text-purple-700 font-semibold leading-6 align-top rounded-xl">
+                    <div class="inline-flex capitalize items-center justify-center px-3.5 py-0.5 text-md -rotate-2 {{ $tag_color }} text-purple-700 font-semibold leading-6 align-top rounded-xl">
                         {{ $seminar->tag }}
                     </div>
                     <div class="flex items-center justify-center px-3.5 py-0.5 text-sm -rotate-1  align-top rounded-xl mt-2">
-                        <span class="inline-block px-2 py-1 relative bg-rose-100 text-purple-700 font-medium leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">{{ $seminar->date }}</span>
+                        <span class="inline-block whitespace-nowrap px-2 py-1 relative bg-rose-100 text-purple-700 font-medium leading-6" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">{{ $seminar->date }}</span>
                     </div>
                 </div>
             </div>
