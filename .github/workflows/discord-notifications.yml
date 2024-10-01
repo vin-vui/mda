@@ -23,8 +23,6 @@ on:
   milestone:
     types: ['created', 'closed', 'opened', 'edited', 'deleted']
   workflow_dispatch:
-  workflow_run:
-    types: ['requested', 'completed']
 
 jobs:
   notify_discord:
