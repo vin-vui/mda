@@ -1,0 +1,21 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches: [ main ]  # Vous pouvez spécifier les branches qui déclencheront le workflow
+  issues:
+    types: [ opened, edited, closed ]
+  pull_request:
+    types: [ opened, edited, closed, reopened ]
+
+jobs:
+  notify_discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Envoyer une notification à Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          MESSAGE="**${{ github.event.sender.login }}** a déclenché un événement **${{ github.event_name }}** sur le dépôt **${{ github.repository }}**."
+          PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
+          curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
