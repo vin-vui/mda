@@ -2,11 +2,31 @@ name: Discord Notifications
 
 on:
   push:
-    branches: [ main ]  # Vous pouvez spécifier les branches qui déclencheront le workflow
-  issues:
-    types: [ opened, edited, closed ]
+    branches: ['**']
   pull_request:
-    types: [ opened, edited, closed, reopened ]
+    types: ['opened', 'reopened', 'closed', 'merged', 'edited', 'synchronize']
+    branches: ['**']
+  issues:
+    types: ['opened', 'edited', 'deleted', 'transferred', 'pinned', 'unpinned', 'closed', 'reopened', 'assigned', 'unassigned', 'labeled', 'unlabeled', 'locked', 'unlocked', 'milestoned', 'demilestoned']
+  issue_comment:
+    types: ['created', 'edited', 'deleted']
+  fork:
+  create:
+  delete:
+  release:
+    types: ['published', 'unpublished', 'created', 'edited', 'deleted', 'prereleased', 'released']
+  deployment:
+  deployment_status:
+  public:
+  member:
+    types: ['added', 'deleted', 'edited']
+  package:
+    types: ['published', 'updated']
+  milestone:
+    types: ['created', 'closed', 'opened', 'edited', 'deleted']
+  workflow_dispatch:
+  workflow_run:
+    types: ['requested', 'completed']
 
 jobs:
   notify_discord:
@@ -16,6 +36,36 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          MESSAGE="**${{ github.event.sender.login }}** a déclenché un événement **${{ github.event_name }}** sur le dépôt **${{ github.repository }}**."
+          EVENT_NAME="${{ github.event_name }}"
+          ACTOR="${{ github.actor }}"
+          REPO="${{ github.repository }}"
+          ACTION="${{ github.event.action }}"
+          REF="${{ github.ref }}"
+          MESSAGE=""
+
+          if [ "$EVENT_NAME" == "push" ]; then
+            BRANCH=$(echo "$REF" | sed 's/refs\/heads\///')
+            COMMITS="${{ github.event.commits | size }}"
+            MESSAGE=":arrow_up: **$ACTOR** a poussé $COMMITS commit(s) sur **$REPO** dans la branche **$BRANCH**."
+          elif [ "$EVENT_NAME" == "pull_request" ]; then
+            PR_NUMBER="${{ github.event.number }}"
+            PR_TITLE="${{ github.event.pull_request.title }}"
+            PR_STATE="${{ github.event.pull_request.state }}"
+            MESSAGE=":arrows_clockwise: Pull Request [#$PR_NUMBER $PR_TITLE](${{ github.event.pull_request.html_url }}) $ACTION par **$ACTOR** sur **$REPO**."
+          elif [ "$EVENT_NAME" == "issues" ]; then
+            ISSUE_NUMBER="${{ github.event.issue.number }}"
+            ISSUE_TITLE="${{ github.event.issue.title }}"
+            MESSAGE=":issue: Issue [#$ISSUE_NUMBER $ISSUE_TITLE](${{ github.event.issue.html_url }}) $ACTION par **$ACTOR** sur **$REPO**."
+          elif [ "$EVENT_NAME" == "issue_comment" ]; then
+            ISSUE_NUMBER="${{ github.event.issue.number }}"
+            COMMENT_BODY="${{ github.event.comment.body }}"
+            MESSAGE=":speech_balloon: Commentaire sur l'issue #$ISSUE_NUMBER par **$ACTOR** :\n> $COMMENT_BODY"
+          elif [ "$EVENT_NAME" == "release" ]; then
+            RELEASE_NAME="${{ github.event.release.name }}"
+            MESSAGE=":bookmark: Release **$RELEASE_NAME** $ACTION par **$ACTOR** sur **$REPO**."
+          else
+            MESSAGE=":grey_question: **$ACTOR** a déclenché un événement de type **$EVENT_NAME** ($ACTION) sur **$REPO**."
+          fi
+
           PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
           curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
