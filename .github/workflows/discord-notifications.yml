@@ -37,37 +37,73 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_ACTION: ${{ github.event.action }}
-          GITHUB_REF: ${{ github.ref }}
           GITHUB_EVENT: ${{ toJson(github.event) }}
         run: |
+          set -e
           MESSAGE=""
+          EMBED_TITLE=""
+          EMBED_DESCRIPTION=""
+          EMBED_URL=""
+          EMBED_COLOR=0x7289DA  # Couleur par défaut (bleu Discord)
+          AVATAR_URL=$(echo "$GITHUB_EVENT" | jq -r '.sender.avatar_url')
 
           if [ "$GITHUB_EVENT_NAME" = "push" ]; then
             BRANCH=$(echo "$GITHUB_REF" | sed 's/refs\/heads\///')
             COMMITS=$(echo "$GITHUB_EVENT" | jq '.commits | length')
-            MESSAGE=":arrow_up: **$GITHUB_ACTOR** a poussé $COMMITS commit(s) sur **$GITHUB_REPOSITORY** dans la branche **$BRANCH**."
+            COMMIT_MSG=$(echo "$GITHUB_EVENT" | jq -r '.head_commit.message')
+            COMMIT_URL=$(echo "$GITHUB_EVENT" | jq -r '.head_commit.url')
+            AUTHOR_NAME=$(echo "$GITHUB_EVENT" | jq -r '.head_commit.author.name')
+            EMBED_TITLE="Nouveau push sur \`$BRANCH\` par $AUTHOR_NAME"
+            EMBED_URL="$COMMIT_URL"
+            EMBED_DESCRIPTION="**Message du commit :** $COMMIT_MSG"
+            EMBED_COLOR=0x00FF00  # Vert
+
           elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
             PR_NUMBER=$(echo "$GITHUB_EVENT" | jq '.number')
             PR_TITLE=$(echo "$GITHUB_EVENT" | jq -r '.pull_request.title')
             PR_URL=$(echo "$GITHUB_EVENT" | jq -r '.pull_request.html_url')
-            MESSAGE=":arrows_clockwise: Pull Request [#$PR_NUMBER $PR_TITLE]($PR_URL) $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
+            PR_ACTION=$(echo "$GITHUB_EVENT" | jq -r '.action')
+            EMBED_TITLE="Pull Request #$PR_NUMBER $PR_TITLE"
+            EMBED_URL="$PR_URL"
+            EMBED_DESCRIPTION="**Action :** $PR_ACTION\n**Auteur :** $GITHUB_ACTOR"
+            EMBED_COLOR=0x0000FF  # Bleu
+
           elif [ "$GITHUB_EVENT_NAME" = "issues" ]; then
             ISSUE_NUMBER=$(echo "$GITHUB_EVENT" | jq '.issue.number')
             ISSUE_TITLE=$(echo "$GITHUB_EVENT" | jq -r '.issue.title')
             ISSUE_URL=$(echo "$GITHUB_EVENT" | jq -r '.issue.html_url')
-            MESSAGE=":issue: Issue [#$ISSUE_NUMBER $ISSUE_TITLE]($ISSUE_URL) $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
+            ISSUE_ACTION=$(echo "$GITHUB_EVENT" | jq -r '.action')
+            EMBED_TITLE="Issue #$ISSUE_NUMBER $ISSUE_TITLE"
+            EMBED_URL="$ISSUE_URL"
+            EMBED_DESCRIPTION="**Action :** $ISSUE_ACTION\n**Auteur :** $GITHUB_ACTOR"
+            EMBED_COLOR=0xFFA500  # Orange
+
           elif [ "$GITHUB_EVENT_NAME" = "issue_comment" ]; then
             ISSUE_NUMBER=$(echo "$GITHUB_EVENT" | jq '.issue.number')
+            ISSUE_TITLE=$(echo "$GITHUB_EVENT" | jq -r '.issue.title')
+            ISSUE_URL=$(echo "$GITHUB_EVENT" | jq -r '.issue.html_url')
             COMMENT_BODY=$(echo "$GITHUB_EVENT" | jq -r '.comment.body')
-            MESSAGE=":speech_balloon: Commentaire sur l'issue #$ISSUE_NUMBER par **$GITHUB_ACTOR** :\n> $COMMENT_BODY"
-          elif [ "$GITHUB_EVENT_NAME" = "release" ]; then
-            RELEASE_NAME=$(echo "$GITHUB_EVENT" | jq -r '.release.name')
-            MESSAGE=":bookmark: Release **$RELEASE_NAME** $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
+            EMBED_TITLE="Nouveau commentaire sur l'issue #$ISSUE_NUMBER $ISSUE_TITLE"
+            EMBED_URL="$ISSUE_URL"
+            EMBED_DESCRIPTION="$COMMENT_BODY"
+            EMBED_COLOR=0xFFFF00  # Jaune
+
           else
-            MESSAGE=":grey_question: **$GITHUB_ACTOR** a déclenché un événement de type **$GITHUB_EVENT_NAME** ($GITHUB_ACTION) sur **$GITHUB_REPOSITORY**."
+            EMBED_TITLE="Événement $GITHUB_EVENT_NAME"
+            EMBED_DESCRIPTION="**Auteur :** $GITHUB_ACTOR"
+            EMBED_COLOR=0xFFFFFF  # Blanc
           fi
 
-          PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
+          # Construction du payload JSON pour l'embed
+          PAYLOAD=$(jq -n \
+            --arg username "GitHub Bot" \
+            --arg avatar_url "$AVATAR_URL" \
+            --arg title "$EMBED_TITLE" \
+            --arg url "$EMBED_URL" \
+            --arg description "$EMBED_DESCRIPTION" \
+            --argjson color "$EMBED_COLOR" \
+            '{username: $username, avatar_url: $avatar_url, embeds: [{title: $title, url: $url, description: $description, color: $color}]}')
+
+          # Envoi du payload au webhook Discord
           curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
 
