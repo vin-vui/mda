@@ -20,8 +20,6 @@ on:
   public:
   member:
     types: ['added', 'deleted', 'edited']
-  package:
-    types: ['published', 'updated']
   milestone:
     types: ['created', 'closed', 'opened', 'edited', 'deleted']
   workflow_dispatch:
@@ -32,40 +30,46 @@ jobs:
   notify_discord:
     runs-on: ubuntu-latest
     steps:
+      - name: Installer jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Envoyer une notification à Discord
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_ACTION: ${{ github.event.action }}
+          GITHUB_REF: ${{ github.ref }}
+          GITHUB_EVENT: ${{ toJson(github.event) }}
         run: |
-          EVENT_NAME="${{ github.event_name }}"
-          ACTOR="${{ github.actor }}"
-          REPO="${{ github.repository }}"
-          ACTION="${{ github.event.action }}"
-          REF="${{ github.ref }}"
           MESSAGE=""
 
-          if [ "$EVENT_NAME" == "push" ]; then
-            BRANCH=$(echo "$REF" | sed 's/refs\/heads\///')
-            COMMITS="${{ github.event.commits | size }}"
-            MESSAGE=":arrow_up: **$ACTOR** a poussé $COMMITS commit(s) sur **$REPO** dans la branche **$BRANCH**."
-          elif [ "$EVENT_NAME" == "pull_request" ]; then
-            PR_NUMBER="${{ github.event.number }}"
-            PR_TITLE="${{ github.event.pull_request.title }}"
-            PR_STATE="${{ github.event.pull_request.state }}"
-            MESSAGE=":arrows_clockwise: Pull Request [#$PR_NUMBER $PR_TITLE](${{ github.event.pull_request.html_url }}) $ACTION par **$ACTOR** sur **$REPO**."
-          elif [ "$EVENT_NAME" == "issues" ]; then
-            ISSUE_NUMBER="${{ github.event.issue.number }}"
-            ISSUE_TITLE="${{ github.event.issue.title }}"
-            MESSAGE=":issue: Issue [#$ISSUE_NUMBER $ISSUE_TITLE](${{ github.event.issue.html_url }}) $ACTION par **$ACTOR** sur **$REPO**."
-          elif [ "$EVENT_NAME" == "issue_comment" ]; then
-            ISSUE_NUMBER="${{ github.event.issue.number }}"
-            COMMENT_BODY="${{ github.event.comment.body }}"
-            MESSAGE=":speech_balloon: Commentaire sur l'issue #$ISSUE_NUMBER par **$ACTOR** :\n> $COMMENT_BODY"
-          elif [ "$EVENT_NAME" == "release" ]; then
-            RELEASE_NAME="${{ github.event.release.name }}"
-            MESSAGE=":bookmark: Release **$RELEASE_NAME** $ACTION par **$ACTOR** sur **$REPO**."
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            BRANCH=$(echo "$GITHUB_REF" | sed 's/refs\/heads\///')
+            COMMITS=$(echo "$GITHUB_EVENT" | jq '.commits | length')
+            MESSAGE=":arrow_up: **$GITHUB_ACTOR** a poussé $COMMITS commit(s) sur **$GITHUB_REPOSITORY** dans la branche **$BRANCH**."
+          elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            PR_NUMBER=$(echo "$GITHUB_EVENT" | jq '.number')
+            PR_TITLE=$(echo "$GITHUB_EVENT" | jq -r '.pull_request.title')
+            PR_URL=$(echo "$GITHUB_EVENT" | jq -r '.pull_request.html_url')
+            MESSAGE=":arrows_clockwise: Pull Request [#$PR_NUMBER $PR_TITLE]($PR_URL) $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
+          elif [ "$GITHUB_EVENT_NAME" = "issues" ]; then
+            ISSUE_NUMBER=$(echo "$GITHUB_EVENT" | jq '.issue.number')
+            ISSUE_TITLE=$(echo "$GITHUB_EVENT" | jq -r '.issue.title')
+            ISSUE_URL=$(echo "$GITHUB_EVENT" | jq -r '.issue.html_url')
+            MESSAGE=":issue: Issue [#$ISSUE_NUMBER $ISSUE_TITLE]($ISSUE_URL) $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
+          elif [ "$GITHUB_EVENT_NAME" = "issue_comment" ]; then
+            ISSUE_NUMBER=$(echo "$GITHUB_EVENT" | jq '.issue.number')
+            COMMENT_BODY=$(echo "$GITHUB_EVENT" | jq -r '.comment.body')
+            MESSAGE=":speech_balloon: Commentaire sur l'issue #$ISSUE_NUMBER par **$GITHUB_ACTOR** :\n> $COMMENT_BODY"
+          elif [ "$GITHUB_EVENT_NAME" = "release" ]; then
+            RELEASE_NAME=$(echo "$GITHUB_EVENT" | jq -r '.release.name')
+            MESSAGE=":bookmark: Release **$RELEASE_NAME** $GITHUB_ACTION par **$GITHUB_ACTOR** sur **$GITHUB_REPOSITORY**."
           else
-            MESSAGE=":grey_question: **$ACTOR** a déclenché un événement de type **$EVENT_NAME** ($ACTION) sur **$REPO**."
+            MESSAGE=":grey_question: **$GITHUB_ACTOR** a déclenché un événement de type **$GITHUB_EVENT_NAME** ($GITHUB_ACTION) sur **$GITHUB_REPOSITORY**."
           fi
 
           PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
           curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
+
