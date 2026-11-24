@@ -87,7 +87,7 @@
 
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div class="">
-                        <x-jet-label value="Image" />
+                        <x-label value="Image" />
                         @if (!is_string($this->image) && $this->image != null)
                         <img src="{{ $this->image->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                         @else
@@ -96,7 +96,7 @@
                     </div>
                     <div x-data="{photoName: null, photoPreview: null}">
                         <input type="file" class="hidden" wire:model="image" x-ref="photo" />
-                        <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                        <x-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                             <span class="py-1">sélectionner une nouvelle image</span>
                             <div wire:loading wire:target="image" wire:key="image">
                                 <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -116,21 +116,21 @@
                                     </g>
                                 </svg>
                             </div>
-                        </x-jet-secondary-button>
+                        </x-secondary-button>
                         @error('image') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="my-4">
-                        <x-jet-label for="date" value="Date" />
-                        <x-jet-input id="date" class="block mt-1 w-full" tag="text" name="date" wire:model="date" />
+                        <x-label for="date" value="Date" />
+                        <x-input id="date" class="block mt-1 w-full" tag="text" name="date" wire:model="date" />
                         @error('date') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
-                        <x-jet-label for="title" value="Titre" />
-                        <x-jet-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model="title" />
+                        <x-label for="title" value="Titre" />
+                        <x-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model="title" />
                         @error('title') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
-                        <x-jet-label for="tag" value="Tag" />
+                        <x-label for="tag" value="Tag" />
                         <select name="tag" wire:ignore wire:model.lazy="tag" class="w-full p-4 mt-2 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none h-14 placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none">
                             <option @if (!$this->tag) selected="selected" @endif> - </option>
                             <option @if ($this->tag === 'atelier ados') selected="selected" @endif>atelier ados</option>
@@ -139,12 +139,12 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <x-jet-label for="description" value="Description" />
+                        <x-label for="description" value="Description" />
                         <textarea rows="5" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model="description"></textarea>
                         @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="space-x-2 flex items-center">
-                        <x-jet-label for="display" value="Publier ?" />
+                        <x-label for="display" value="Publier ?" />
                         <button id="display" tag="button" wire:click="changeDisplay" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 bg-gray-200" x-data="{ on: {{ $display ? 'true' : 'false' }} }" role="switch" aria-checked="{{ $display ? 'true' : 'false' }}" :aria-checked="on.toString()" @click="on = !on" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'bg-green-600': on, 'bg-gray-200': !(on) }">
                             <span class="pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'translate-x-5': on, 'translate-x-0': !(on) }">
                                 <span class="absolute inset-0 flex h-full w-full items-center justify-center transition-opacity opacity-100 ease-in duration-200" aria-hidden="true" x-state:on="Enabled" x-state:off="Not Enabled" :class="{ 'opacity-0 ease-out duration-100': on, 'opacity-100 ease-in duration-200': !(on) }">

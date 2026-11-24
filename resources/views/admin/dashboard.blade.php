@@ -74,8 +74,8 @@
                     <div class="w-full sm:px-6 lg:px-8" wire:key="information-field-{{ $information->id }}">
                         <div class="flex flex-col">
                             <div class="mb-4 ">
-                                <x-jet-label for="{{ $information->title }}" value="{{ $information->title }}" />
-                                <x-jet-input id="{{ $information->title }}" class="block mt-1 w-full" type="text" name="label" wire:model="informations.{{ $index }}.label" required />
+                                <x-label for="{{ $information->title }}" value="{{ $information->title }}" />
+                                <x-input id="{{ $information->title }}" class="block mt-1 w-full" type="text" name="label" wire:model="informations.{{ $index }}.label" required />
                                 @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
                             </div>
                         </div>

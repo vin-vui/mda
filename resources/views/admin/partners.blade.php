@@ -56,7 +56,7 @@
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div class="">
                         <div class="">
-                            <x-jet-label value="Image" />
+                            <x-label value="Image" />
                             @if (!is_string($this->url) && $this->url != null)
                             <img src="{{ $this->url->temporaryUrl() }}" alt="" class="mt-2 h-72 w-full object-contain rounded-3xl border-2 border-purple-50">
                             @else
@@ -65,7 +65,7 @@
                         </div>
                         <div x-data="{photoName: null, photoPreview: null}">
                             <input type="file" class="hidden" wire:model="url" x-ref="photo" />
-                            <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="url" wire:key="url">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -85,12 +85,12 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                             @error('url') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="my-4">
-                            <x-jet-label for="label" value="Label" />
-                            <x-jet-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model="label" />
+                            <x-label for="label" value="Label" />
+                            <x-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model="label" />
                             @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                     </div>

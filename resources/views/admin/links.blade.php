@@ -61,13 +61,13 @@
 
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div class="mb-4">
-                        <x-jet-label for="label" value="Label" />
-                        <x-jet-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model="label" required />
+                        <x-label for="label" value="Label" />
+                        <x-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model="label" required />
                         @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
-                        <x-jet-label for="url" value="URL" />
-                        <x-jet-input id="url" class="block mt-1 w-full" type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" name="url" placeholder="" wire:model="url" required />
+                        <x-label for="url" value="URL" />
+                        <x-input id="url" class="block mt-1 w-full" type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" name="url" placeholder="" wire:model="url" required />
                         @error('url') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                 </div>

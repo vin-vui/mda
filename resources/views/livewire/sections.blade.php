@@ -18,14 +18,14 @@
             @if($this->has_image)
             <div class="basis-1/2 w-full">
                 <div class="">
-                    <x-jet-label value="Visuel" />
+                    <x-label value="Visuel" />
                     <img id="{{ $this->target[0] }}" src="{{ ${$target[2]} ? ${$target[2]}->temporaryUrl() : Storage::disk('uploads')->url(${$target[0]}) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="{{ $this->target[1] }}" type="file" class="hidden" wire:model="{{ $target[2] }}" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="{{ $target[2] }}" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -45,13 +45,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="{{ $this->target[3] }}" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="{{ $this->target[3] }}" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('{{ $target[2] }}') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -87,14 +87,14 @@
         <div class="flex px-6 mt-4 gap-4">
             <div class="basis-1/2">
                 <div class="">
-                    <x-jet-label value="Image 1" />
+                    <x-label value="Image 1" />
                     <img id="image_1" src="{{ $photo_1 ? $photo_1->temporaryUrl() : Storage::disk('uploads')->url($image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_1" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -114,13 +114,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage1" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage1" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_1') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -148,7 +148,7 @@
             </div>
             <div class="basis-1/2">
                 <div class="">
-                    <x-jet-label value="Image 2" />
+                    <x-label value="Image 2" />
                     <img id="image_2" src="{{ $photo_2 ? $photo_2->temporaryUrl() : Storage::disk('uploads')->url($image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                     <span id="fileResult2"></span>
                 </div>
@@ -156,7 +156,7 @@
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_2" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -176,13 +176,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage2" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage2" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_2') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -212,14 +212,14 @@
         <div class="flex px-6 mt-4 gap-4">
             <div class="basis-1/2">
                 <div class="">
-                    <x-jet-label value="Image 3" />
+                    <x-label value="Image 3" />
                     <img id="image_3" src="{{ $photo_3 ? $photo_3->temporaryUrl() : Storage::disk('uploads')->url($image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_3" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -239,13 +239,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage3" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage3" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -265,7 +265,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_3') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -273,14 +273,14 @@
             </div>
             <div class="basis-1/2">
                 <div class="">
-                    <x-jet-label value="Image 4" />
+                    <x-label value="Image 4" />
                     <img id="image_4" src="{{ $photo_4 ? $photo_4->temporaryUrl() : Storage::disk('uploads')->url($image_4) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_4" type="file" class="hidden" wire:model="photo_4" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_4" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -300,13 +300,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage4" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage4" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -326,7 +326,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_4') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -342,14 +342,14 @@
         <div class=" flex px-6 mt-4 gap-4">
             <div class="w-full">
                 <div class="">
-                    <x-jet-label value="Image 1" />
+                    <x-label value="Image 1" />
                     <img id="image_1" src="{{ $photo_1 ? $photo_1->temporaryUrl() : Storage::disk('uploads')->url($image_1) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_1" type="file" class="hidden" wire:model="photo_1" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_1" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -369,13 +369,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage1" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage1" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -395,7 +395,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_1') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -405,14 +405,14 @@
         <div class="flex px-6 mt-4 gap-4">
             <div class="basis-1/3">
                 <div class="">
-                    <x-jet-label value="Image 2" />
+                    <x-label value="Image 2" />
                     <img id="image_2" src="{{ $photo_2 ? $photo_2->temporaryUrl() : Storage::disk('uploads')->url($image_2) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_2" type="file" class="hidden" wire:model="photo_2" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_2" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -432,13 +432,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage2" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage2" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -458,7 +458,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_2') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -466,14 +466,14 @@
             </div>
             <div class="basis-2/3">
                 <div class="">
-                    <x-jet-label value="Image 3" />
+                    <x-label value="Image 3" />
                     <img id="image_3" src="{{ $photo_3 ? $photo_3->temporaryUrl() : Storage::disk('uploads')->url($image_3) }}" alt="" class="mt-2 h-72 w-full object-cover rounded-3xl border-2 border-purple-50">
                 </div>
                 <div x-data="{photoName: null, photoPreview: null, sending: false}">
                     <input accept=".jpg, .jpeg, .png" size="1000000" id="input_3" type="file" class="hidden" wire:model="photo_3" x-ref="photo" accept="image/png, image/jpeg" />
                     <div class="flex items-center justify-between mt-2">
                         <div class="">
-                            <x-jet-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
+                            <x-secondary-button class="2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="photo_3" wire:key="photo">
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -493,13 +493,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                         <div class="">
-                            <x-jet-secondary-button id="sendCroppedImage3" x-show="!sending" @click="sending = !sending">
+                            <x-secondary-button id="sendCroppedImage3" x-show="!sending" @click="sending = !sending">
                                 <span class="py-1">Envoyer l'image recadrée</span>
-                            </x-jet-secondary-button>
-                            <x-jet-secondary-button x-show="sending" disabled>
+                            </x-secondary-button>
+                            <x-secondary-button x-show="sending" disabled>
                                 <span class="py-1">Envoyer l'image recadrée</span>
                                 <div>
                                     <svg class="ml-3 text-green-600 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -519,7 +519,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                            </x-jet-secondary-button>
+                            </x-secondary-button>
                         </div>
                     </div>
                     @error('photo_3') <span class="text-red-500">{{ $message }}</span>@enderror

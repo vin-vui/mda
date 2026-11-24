@@ -23,7 +23,7 @@
     <body class="font-sans antialiased">
 
         <livewire:toasts />
-        <x-jet-banner />
+        <x-banner />
 
         <div class="min-h-screen bg-purple-50">
             @livewire('navigation-menu')

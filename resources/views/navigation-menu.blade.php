@@ -8,24 +8,24 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('seminars') }}" :active="request()->routeIs('seminars')">
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('seminars') }}" :active="request()->routeIs('seminars')">
                         Ateliers
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('announcements') }}" :active="request()->routeIs('announcements')">
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('announcements') }}" :active="request()->routeIs('announcements')">
                         Annonces
-                    </x-jet-nav-link>
+                    </x-nav-link>
 
                     <div class="sm:flex sm:items-center">
-                        <x-jet-dropdown align="right" >
+                        <x-dropdown align="right" >
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
@@ -37,50 +37,50 @@
                                 </span>
                             </x-slot>
                             <x-slot name="content">
-                                <x-jet-dropdown-link href="{{ route('section.home') }}">
+                                <x-dropdown-link href="{{ route('section.home') }}">
                                     Accueil
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.missions') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.missions') }}">
                                     Nos Missions
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.values') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.values') }}">
                                     Consultations spécialisées
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.publics') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.publics') }}">
                                     Pour Qui ?
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.seminars') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.seminars') }}">
                                     Ateliers Collectifs
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.resado') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.resado') }}">
                                     Rés'Ado
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.us') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.us') }}">
                                     Qui Sommes-Nous ?
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.informations') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.informations') }}">
                                     Informations Pratiques
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('partners') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('partners') }}">
                                     Nos Partenaires
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('links') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('links') }}">
                                     Liens Utiltes
-                                </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('section.footer') }}">
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('section.footer') }}">
                                     Pied de Page
-                                </x-jet-dropdown-link>
+                                </x-dropdown-link>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 </div>
 
             </div>
 
             <div class="hidden sm:flex sm:ml-6 sm:gap-8">
-                <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
-                </x-jet-nav-link>
+                </x-nav-link>
                 <div class="sm:flex sm:items-center">
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
@@ -106,9 +106,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -128,17 +128,17 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}" x-data>
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                    <x-responsive-nav-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
-                    </x-jet-responsive-nav-link>
+                    </x-responsive-nav-link>
                 </form>
 
             </div>
