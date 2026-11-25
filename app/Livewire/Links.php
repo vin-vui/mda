@@ -5,14 +5,12 @@ namespace App\Livewire;
 use App\Models\Link;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
 
 class Links extends Component
 {
-    use WireToast;
 
     public $url, $label, $link_id;
     public $confirming;
@@ -61,9 +59,9 @@ class Links extends Component
         $this->closeModal();
 
         if($this->link_id == '') {
-            toast()->success('Lien ajouté !')->push();
+            $this->dispatch('toast', message: 'Lien ajouté !');
         } else {
-            toast()->success('Lien modifié !')->push();
+            $this->dispatch('toast', message: 'Lien modifié !');
         }
     }
 
@@ -89,6 +87,6 @@ class Links extends Component
 
         $this->closeModal();
 
-        toast()->success('Lien supprimé')->push();
+        $this->dispatch('toast', message: 'Lien supprimé');
     }
 }

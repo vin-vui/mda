@@ -5,12 +5,10 @@ namespace App\Livewire;
 use App\Models\Information;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Carbon\Carbon;
 
 class Dashboard extends Component
 {
-    use WireToast;
 
     public $informations;
 

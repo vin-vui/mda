@@ -5,12 +5,10 @@ namespace App\Livewire;
 use App\Models\Announcement;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Carbon\Carbon;
 
 class Announcements extends Component
 {
-    use WireToast;
 
     public $title, $description, $display, $announcement_id;
     public $confirming;
@@ -56,9 +54,9 @@ class Announcements extends Component
         ]);
 
         if ($this->announcement_id == '') {
-            toast()->success('Annonce ajoutée !')->push();
+            $this->dispatch('toast', message: 'Annonce ajoutée !');
         } else {
-            toast()->success('Annonce modifiée !')->push();
+            $this->dispatch('toast', message: 'Annonce modifiée !');
         }
 
         Announcement::updateOrCreate(['id' => $this->announcement_id], $dataValid);
@@ -90,7 +88,7 @@ class Announcements extends Component
 
         $this->closeModal();
 
-        toast()->success('Annonce supprimée')->push();
+        $this->dispatch('toast', message: 'Annonce supprimée');
     }
 
     public function changeDisplay()

@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
-        @toastScripts
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
         <!-- Styles -->
@@ -22,7 +21,7 @@
     </head>
     <body class="font-sans antialiased">
 
-        <livewire:toasts />
+        <x-toasts />
         <x-banner />
 
         <div class="min-h-screen bg-purple-50">

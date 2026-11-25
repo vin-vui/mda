@@ -5,14 +5,12 @@ namespace App\Livewire;
 use App\Models\Seminar;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
 
 class Seminars extends Component
 {
-    use WireToast;
     use WithFileUploads;
 
     public $date, $image, $title, $description, $display, $tag, $seminar_id;
@@ -80,9 +78,9 @@ class Seminars extends Component
         }
 
         if ($this->seminar_id == '') {
-            toast()->success('Actu/Atelier ajouté !')->push();
+            $this->dispatch('toast', message: 'Actu/Atelier ajouté !');
         } else {
-            toast()->success('Actu/Atelier modifié !')->push();
+            $this->dispatch('toast', message: 'Actu/Atelier modifié !');
         }
 
         Seminar::updateOrCreate(['id' => $this->seminar_id], $dataValid);
@@ -117,7 +115,7 @@ class Seminars extends Component
 
         $this->closeModal();
 
-        toast()->success('Actu/Atelier supprimé')->push();
+        $this->dispatch('toast', message: 'Actu/Atelier supprimé');
     }
 
     public function changeDisplay()

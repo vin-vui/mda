@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Section;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
@@ -13,7 +12,6 @@ use Illuminate\Support\Str;
 
 class Sections extends Component
 {
-    use WireToast;
     use WithFileUploads;
 
     public $section_name, $section, $description, $image_1, $image_2, $image_3, $image_4, $image_5, $image_6, $update_time;

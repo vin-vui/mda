@@ -5,14 +5,12 @@ namespace App\Livewire;
 use App\Models\Partner;
 
 use Livewire\Component;
-use Usernotnull\Toast\Concerns\WireToast;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
 
 class Partners extends Component
 {
-    use WireToast;
     use WithFileUploads;
 
     public $url, $label, $partner_id;
@@ -77,9 +75,9 @@ class Partners extends Component
         $this->closeModal();
 
         if($this->partner_id == '') {
-            toast()->success('Partenaire ajouté !')->push();
+            $this->dispatch('toast', message: 'Partenaire ajouté !');
         } else {
-            toast()->success('Partenaire modifié !')->push();
+            $this->dispatch('toast', message: 'Partenaire modifié !');
         }
     }
 
@@ -105,6 +103,6 @@ class Partners extends Component
 
         $this->closeModal();
 
-        toast()->success('Partenaire supprimé')->push();
+        $this->dispatch('toast', message: 'Partenaire supprimé');
     }
 }

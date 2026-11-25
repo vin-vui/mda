@@ -2,13 +2,11 @@ console.log('app.js loaded');
 
 import './bootstrap';
 import '../scss/app.scss';
-// Livewire 3 embarque Alpine : on l'importe depuis Livewire (cf. README de tall-toasts 2)
+// Livewire 3 embarque Alpine : on l'importe depuis Livewire au lieu du paquet alpinejs
 import { Alpine, Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
-import ToastComponent from '../../vendor/usernotnull/tall-toasts/resources/js/tall-toasts'
 import 'cropperjs/dist/cropper.min.css';
 import Cropper from 'cropperjs';
 
-Alpine.plugin(ToastComponent)
 Livewire.start()
 
 let cropper;
