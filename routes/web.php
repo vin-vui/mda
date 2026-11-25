@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Livewire\Partners;
-use App\Http\Livewire\Links;
-use App\Http\Livewire\Seminars;
-use App\Http\Livewire\SeminarsList;
-use App\Http\Livewire\Announcements;
-use App\Http\Livewire\Dashboard;
+use App\Livewire\Partners;
+use App\Livewire\Links;
+use App\Livewire\Seminars;
+use App\Livewire\SeminarsList;
+use App\Livewire\Announcements;
+use App\Livewire\Dashboard;
 
 /*
 |--------------------------------------------------------------------------

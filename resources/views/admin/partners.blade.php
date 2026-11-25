@@ -64,7 +64,7 @@
                             @endif
                         </div>
                         <div x-data="{photoName: null, photoPreview: null}">
-                            <input type="file" class="hidden" wire:model="url" x-ref="photo" />
+                            <input type="file" class="hidden" wire:model.live="url" x-ref="photo" />
                             <x-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                                 <span class="py-1">sélectionner une nouvelle image</span>
                                 <div wire:loading wire:target="url" wire:key="url">
@@ -90,7 +90,7 @@
                         </div>
                         <div class="my-4">
                             <x-label for="label" value="Label" />
-                            <x-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model="label" />
+                            <x-input id="label" class="block mt-1 w-full" type="text" name="label" placeholder="" wire:model.live="label" />
                             @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                     </div>

@@ -75,7 +75,7 @@
                         <div class="flex flex-col">
                             <div class="mb-4 ">
                                 <x-label for="{{ $information->title }}" value="{{ $information->title }}" />
-                                <x-input id="{{ $information->title }}" class="block mt-1 w-full" type="text" name="label" wire:model="informations.{{ $index }}.label" required />
+                                <x-input id="{{ $information->title }}" class="block mt-1 w-full" type="text" name="label" wire:model.live="informations.{{ $index }}.label" required />
                                 @error('label') <span class="text-red-500">{{ $message }}</span>@enderror
                             </div>
                         </div>

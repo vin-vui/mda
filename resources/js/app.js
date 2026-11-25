@@ -2,14 +2,14 @@ console.log('app.js loaded');
 
 import './bootstrap';
 import '../scss/app.scss';
-import Alpine from 'alpinejs';
+// Livewire 3 embarque Alpine : on l'importe depuis Livewire (cf. README de tall-toasts 2)
+import { Alpine, Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
 import ToastComponent from '../../vendor/usernotnull/tall-toasts/resources/js/tall-toasts'
 import 'cropperjs/dist/cropper.min.css';
 import Cropper from 'cropperjs';
 
-Alpine.data('ToastComponent', ToastComponent)
-window.Alpine = Alpine;
-Alpine.start();
+Alpine.plugin(ToastComponent)
+Livewire.start()
 
 let cropper;
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById(id).addEventListener('click', () => {
                         const croppedCanvas = cropper.getCroppedCanvas();
                         const croppedImageDataUrl = croppedCanvas.toDataURL();
-                        Livewire.emit('uploadCroppedImage', name, croppedImageDataUrl);
+                        Livewire.dispatch('uploadCroppedImage', { number: name, croppedImageDataUrl });
                     });
                 }
             }

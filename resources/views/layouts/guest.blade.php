@@ -35,6 +35,6 @@
 
     {{ $slot }}
 
-    @livewireScripts
+    @livewireScriptConfig
 </body>
 </html>

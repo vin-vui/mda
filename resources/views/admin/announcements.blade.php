@@ -68,12 +68,12 @@
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div class="mb-4">
                         <x-label for="title" value="Titre" />
-                        <x-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model="title" />
+                        <x-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model.live="title" />
                         @error('title') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
                         <x-label for="description" value="Description" />
-                        <textarea rows="5" id="description" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model="description"></textarea>
+                        <textarea rows="5" id="description" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model.live="description"></textarea>
                         @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="space-x-2 flex items-center">

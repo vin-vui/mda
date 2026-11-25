@@ -95,7 +95,7 @@
                         @endif
                     </div>
                     <div x-data="{photoName: null, photoPreview: null}">
-                        <input type="file" class="hidden" wire:model="image" x-ref="photo" />
+                        <input type="file" class="hidden" wire:model.live="image" x-ref="photo" />
                         <x-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                             <span class="py-1">sélectionner une nouvelle image</span>
                             <div wire:loading wire:target="image" wire:key="image">
@@ -121,17 +121,17 @@
                     </div>
                     <div class="my-4">
                         <x-label for="date" value="Date" />
-                        <x-input id="date" class="block mt-1 w-full" tag="text" name="date" wire:model="date" />
+                        <x-input id="date" class="block mt-1 w-full" tag="text" name="date" wire:model.live="date" />
                         @error('date') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
                         <x-label for="title" value="Titre" />
-                        <x-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model="title" />
+                        <x-input id="title" class="block mt-1 w-full" tag="text" name="title" wire:model.live="title" />
                         @error('title') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
                         <x-label for="tag" value="Tag" />
-                        <select name="tag" wire:ignore wire:model.lazy="tag" class="w-full p-4 mt-2 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none h-14 placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none">
+                        <select name="tag" wire:ignore wire:model.blur="tag" class="w-full p-4 mt-2 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none h-14 placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none">
                             <option @if (!$this->tag) selected="selected" @endif> - </option>
                             <option @if ($this->tag === 'atelier ados') selected="selected" @endif>atelier ados</option>
                             <option @if ($this->tag === 'atelier parents') selected="selected" @endif>atelier parents</option>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="mb-4">
                         <x-label for="description" value="Description" />
-                        <textarea rows="5" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model="description"></textarea>
+                        <textarea rows="5" class="resize-y w-full h-full mt-2 p-4 text-sm font-medium text-purple-700 placeholder-purple-700 duration-300 ease-in-out border-2 outline-none placeholder-opacity-70 rounded-2xl border-purple-50 focus:border-purple-200 focus:ring-purple-200 focus:outline-none" type="text" name="description" wire:model.live="description"></textarea>
                         @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div class="space-x-2 flex items-center">
