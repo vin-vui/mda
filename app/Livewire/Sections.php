@@ -9,8 +9,7 @@ use Usernotnull\Toast\Concerns\WireToast;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
-use Illuminate\Http\UploadedFile;
-use Image;
+use Illuminate\Support\Str;
 
 class Sections extends Component
 {
@@ -31,12 +30,23 @@ class Sections extends Component
 
     public function uploadCroppedImage($number, $croppedImageDataUrl)
     {
-        $image = Image::make($croppedImageDataUrl);
-        $tempFileName = tempnam(sys_get_temp_dir(), 'cropped_image_');
-        $image->save($tempFileName, 90, 'png');
-        $uploadedFile = new UploadedFile($tempFileName, 'cropped_image.png');
+        // Seules les colonnes image_1 à image_6 de la section sont modifiables
+        if (! in_array($number, ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6'], true)) {
+            return;
+        }
 
-        $filePath = Storage::disk('uploads')->putFile('/', $uploadedFile);
+        // Cropper.js envoie l'image recadrée en PNG encodé dans une data URL
+        if (! preg_match('#^data:image/png;base64,(.+)$#s', (string) $croppedImageDataUrl, $matches)) {
+            return;
+        }
+        $binary = base64_decode($matches[1], true);
+        $info = $binary === false ? false : @getimagesizefromstring($binary);
+        if ($info === false || $info[2] !== IMAGETYPE_PNG) {
+            return;
+        }
+
+        $filePath = Str::random(40).'.png';
+        Storage::disk('uploads')->put($filePath, $binary);
 
         $section = $this->section;
         $section->{$number} = $filePath;
