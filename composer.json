@@ -14,7 +14,8 @@
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0",
-        "livewire/livewire": "^3.6.4"
+        "livewire/livewire": "^3.6.4",
+        "vin-vui/laravel-stats": "^0.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -66,5 +67,10 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [{
+        "name": "laravel-stats",
+        "type": "vcs",
+        "url": "https://github.com/vin-vui/laravel-stats"
+    }]
 }

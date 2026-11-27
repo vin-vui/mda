@@ -92,4 +92,9 @@
             </div>
         </div>
     </div>
+
+    {{-- Statistiques de visites : wire:ignore évite que les mises à jour Livewire de la page ne les redessinent --}}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" wire:ignore>
+        <x-stats::dashboard />
+    </div>
 </div>
