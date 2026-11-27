@@ -71,6 +71,7 @@
     "repositories": [{
         "name": "laravel-stats",
         "type": "vcs",
-        "url": "https://github.com/vin-vui/laravel-stats"
+        "url": "https://github.com/vin-vui/laravel-stats",
+        "no-api": true
     }]
 }
